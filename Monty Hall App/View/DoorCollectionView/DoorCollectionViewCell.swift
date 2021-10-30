@@ -10,9 +10,7 @@ import Foundation
 
 // MARK: Door Collection View Cell
 class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
-  
     private var _door = Door(-1)
-    
     var door: Door {
         get {
             return _door
@@ -23,23 +21,17 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     }
     
     func stateUpdated(_ newState: DoorState) {
-        label.text = "Opa"
+        label.text = "Updated"
     }
-    
-   
-    // Cell identifier
+    /// Cell identifier
     static let identifier = "DoorCollectionViewCell"
-    
-    // Door View
+    /// Door
     let doorView = UIImageView()
-    
-    // Behind View
+    /// Behind View
     let behindView = UIImageView()
-    
-    // Door label
+    /// label
     let label = UILabel()
-    
-    // Tier 1 - Label constraints
+    /// Adds constraints to behindView - Hierarchy 1.
     fileprivate func behindViewConstraints() {
         behindView.translatesAutoresizingMaskIntoConstraints = false
         behindView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
@@ -47,8 +39,7 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         behindView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
         behindView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
     }
-    
-    // Tier 2 - Label constraints
+    /// Adds constraints to door - Hierarchy 2.
     fileprivate func doorViewConstraints() {
         doorView.translatesAutoresizingMaskIntoConstraints = false
         doorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
@@ -56,8 +47,7 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         doorView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
         doorView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
     }
-    
-    // Tier 3 - Label constraints
+    /// Adds constraints to label - Hierarchy 3.
     fileprivate func labelConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
@@ -65,59 +55,45 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         label.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
         label.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        // Background
+        /// Background
         contentView.backgroundColor = .gray
-        
-        // Behind view setup
+        /// Hierarchy 1 - behind view.
         contentView.addSubview(behindView)
         behindViewConstraints()
-        
-        // Door view setup
+        /// Hierarchy 2 - door.
         contentView.addSubview(doorView)
         doorViewConstraints()
-        
         doorView.image = UIImage(named: "Door")
-        
-        // Label setup
+        /// Hierarchy 3 - label.
         contentView.addSubview(label)
         labelConstraints()
-        
     }
-    
-    // Label text setup
-    func setDoorLabelNumber(_ doorNumber: Int) {
+    /// Label text setup
+    func setDoorNumber(_ doorNumber: Int) {
         label.text = String(doorNumber)
         label.textAlignment = .center
     }
-    
-    // Debug label text setup
+    /// Debug label text setup
     func debugDoor(_ door: Door) {
         label.text = ("\(door.id) \(door.isPrized)")
         label.textAlignment = .center
     }
-
-    // Prize door setup
+    /// Prize door setup
     func prizeDoorSetup() {
         behindView.image = UIImage(named: "FerrariDoor")
     }
-    
-    // Goat door setup
+    /// Goat door setup
     func goatDoorSetup() {
         behindView.image = UIImage(named: "GoatDoor")
     }
-    
-    // Open door
+    /// Open door
     func openDoor() {
         doorView.alpha = 0
         label.alpha = 0
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

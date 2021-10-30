@@ -7,7 +7,9 @@
 
 import Foundation
 
-//MARK: - Second Choice Options
+/// Second Choice Options
+///     - Keep door: Mantain first choice
+///     - Switch door: Switches to ohter
 enum SecondChoice {
     case keepDoor
     case switchDoor

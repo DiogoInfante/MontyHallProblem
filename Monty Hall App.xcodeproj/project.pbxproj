@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D14AA3E272DE6FD00B66376 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA3D272DE6FD00B66376 /* AppContainer.swift */; };
+		4D14AA40272DE7B700B66376 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA3F272DE7B700B66376 /* BaseViewController.swift */; };
+		4D14AA43272DE7D500B66376 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA42272DE7D500B66376 /* AssetView.swift */; };
+		4D14AA45272DE7DC00B66376 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA44272DE7DC00B66376 /* Asset.swift */; };
+		4D14AA48272DE82000B66376 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA47272DE82000B66376 /* UIViewExtensions.swift */; };
+		4D14AA4A272DF19200B66376 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA49272DF19200B66376 /* ChoiceView.swift */; };
 		4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E525DCA39800870ADE /* AppDelegate.swift */; };
 		4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E725DCA39800870ADE /* SceneDelegate.swift */; };
 		4D36F3ED25DCA39900870ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D36F3EB25DCA39900870ADE /* Main.storyboard */; };
@@ -16,8 +22,8 @@
 		4D36F40825DCA39B00870ADE /* Monty_Hall_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F40725DCA39B00870ADE /* Monty_Hall_AppUITests.swift */; };
 		4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F41C25DCA3EA00870ADE /* MontyHallProblem.swift */; };
 		4D36F43025DCA7B900870ADE /* DoorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */; };
-		4D36F43525DCAF6A00870ADE /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F43425DCAF6A00870ADE /* PuzzleViewController.swift */; };
-		4D36F44A25DCB03F00870ADE /* PuzzleUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F44925DCB03F00870ADE /* PuzzleUserInterface.swift */; };
+		4D36F43525DCAF6A00870ADE /* PuzzleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F43425DCAF6A00870ADE /* PuzzleVC.swift */; };
+		4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F44925DCB03F00870ADE /* PuzzleView.swift */; };
 		4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */; };
 		4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30125DD64F200304BA6 /* SecondChoice.swift */; };
 		4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30625DD656500304BA6 /* Experiment.swift */; };
@@ -43,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D14AA3D272DE6FD00B66376 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		4D14AA3F272DE7B700B66376 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4D14AA42272DE7D500B66376 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
+		4D14AA44272DE7DC00B66376 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		4D14AA47272DE82000B66376 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		4D14AA49272DF19200B66376 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		4D36F3E225DCA39800870ADE /* Monty Hall App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monty Hall App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D36F3E525DCA39800870ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D36F3E725DCA39800870ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +70,8 @@
 		4D36F40925DCA39B00870ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D36F41C25DCA3EA00870ADE /* MontyHallProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontyHallProblem.swift; sourceTree = "<group>"; };
 		4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionViewCell.swift; sourceTree = "<group>"; };
-		4D36F43425DCAF6A00870ADE /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
-		4D36F44925DCB03F00870ADE /* PuzzleUserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleUserInterface.swift; sourceTree = "<group>"; };
+		4D36F43425DCAF6A00870ADE /* PuzzleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleVC.swift; sourceTree = "<group>"; };
+		4D36F44925DCB03F00870ADE /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionView.swift; sourceTree = "<group>"; };
 		4DC1A30125DD64F200304BA6 /* SecondChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChoice.swift; sourceTree = "<group>"; };
 		4DC1A30625DD656500304BA6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
@@ -92,11 +104,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D1EB67125E4999F00795785 /* Communication */ = {
+		4D14AA39272DE6B100B66376 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4D14AA3A272DE6C300B66376 /* View */,
+				4D14AA3B272DE6CD00B66376 /* Controller */,
 			);
-			path = Communication;
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4D14AA3A272DE6C300B66376 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F44925DCB03F00870ADE /* PuzzleView.swift */,
+				4D14AA49272DF19200B66376 /* ChoiceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D14AA3B272DE6CD00B66376 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F43425DCAF6A00870ADE /* PuzzleVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D14AA3C272DE6E900B66376 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F3E525DCA39800870ADE /* AppDelegate.swift */,
+				4D36F3E725DCA39800870ADE /* SceneDelegate.swift */,
+				4D14AA3D272DE6FD00B66376 /* AppContainer.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4D14AA41272DE7C900B66376 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4D14AA44272DE7DC00B66376 /* Asset.swift */,
+				4D14AA42272DE7D500B66376 /* AssetView.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		4D14AA46272DE80F00B66376 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D14AA47272DE82000B66376 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4D36F3D925DCA39800870ADE = {
@@ -122,12 +180,11 @@
 		4D36F3E425DCA39800870ADE /* Monty Hall App */ = {
 			isa = PBXGroup;
 			children = (
-				4D1EB67125E4999F00795785 /* Communication */,
+				4D14AA3C272DE6E900B66376 /* Application */,
+				4D14AA39272DE6B100B66376 /* Scenes */,
 				4D36F41925DCA3AD00870ADE /* View */,
 				4D36F41B25DCA3BA00870ADE /* Controller */,
 				4D36F41825DCA3A900870ADE /* Model */,
-				4D36F3E525DCA39800870ADE /* AppDelegate.swift */,
-				4D36F3E725DCA39800870ADE /* SceneDelegate.swift */,
 				4D36F3EB25DCA39900870ADE /* Main.storyboard */,
 				4D36F3EE25DCA39B00870ADE /* Assets.xcassets */,
 				4D36F3F025DCA39B00870ADE /* LaunchScreen.storyboard */,
@@ -168,8 +225,9 @@
 		4D36F41925DCA3AD00870ADE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4D36F44925DCB03F00870ADE /* PuzzleUserInterface.swift */,
-				4D36F45125DCB05300870ADE /* Door Collection View */,
+				4D14AA41272DE7C900B66376 /* Assets */,
+				4D14AA46272DE80F00B66376 /* Extensions */,
+				4D36F45125DCB05300870ADE /* DoorCollectionView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,19 +235,19 @@
 		4D36F41B25DCA3BA00870ADE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4D36F43425DCAF6A00870ADE /* PuzzleViewController.swift */,
 				4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */,
+				4D14AA3F272DE7B700B66376 /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4D36F45125DCB05300870ADE /* Door Collection View */ = {
+		4D36F45125DCB05300870ADE /* DoorCollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */,
 				4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */,
 			);
-			path = "Door Collection View";
+			path = DoorCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +260,7 @@
 				4D36F3DE25DCA39800870ADE /* Sources */,
 				4D36F3DF25DCA39800870ADE /* Frameworks */,
 				4D36F3E025DCA39800870ADE /* Resources */,
+				4D14AA38272DDC9B00B66376 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -317,20 +376,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D14AA38272DDC9B00B66376 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D36F3DE25DCA39800870ADE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D14AA40272DE7B700B66376 /* BaseViewController.swift in Sources */,
 				4D36F43025DCA7B900870ADE /* DoorCollectionViewCell.swift in Sources */,
 				4DC1A31A25DD990500304BA6 /* Door.swift in Sources */,
 				4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */,
 				4DC1A31225DD6A3000304BA6 /* DoorCollectionViewDelegate.swift in Sources */,
 				4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */,
+				4D14AA3E272DE6FD00B66376 /* AppContainer.swift in Sources */,
 				4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */,
-				4D36F43525DCAF6A00870ADE /* PuzzleViewController.swift in Sources */,
-				4D36F44A25DCB03F00870ADE /* PuzzleUserInterface.swift in Sources */,
+				4D14AA4A272DF19200B66376 /* ChoiceView.swift in Sources */,
+				4D36F43525DCAF6A00870ADE /* PuzzleVC.swift in Sources */,
+				4D14AA43272DE7D500B66376 /* AssetView.swift in Sources */,
+				4D14AA48272DE82000B66376 /* UIViewExtensions.swift in Sources */,
+				4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */,
 				4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */,
+				4D14AA45272DE7DC00B66376 /* Asset.swift in Sources */,
 				4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */,
 				4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */,
 			);
