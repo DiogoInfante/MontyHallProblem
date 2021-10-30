@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E525DCA39800870ADE /* AppDelegate.swift */; };
+		4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E725DCA39800870ADE /* SceneDelegate.swift */; };
+		4D36F3ED25DCA39900870ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D36F3EB25DCA39900870ADE /* Main.storyboard */; };
+		4D36F3EF25DCA39B00870ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D36F3EE25DCA39B00870ADE /* Assets.xcassets */; };
+		4D36F3F225DCA39B00870ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D36F3F025DCA39B00870ADE /* LaunchScreen.storyboard */; };
+		4D36F3FD25DCA39B00870ADE /* Monty_Hall_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3FC25DCA39B00870ADE /* Monty_Hall_AppTests.swift */; };
+		4D36F40825DCA39B00870ADE /* Monty_Hall_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F40725DCA39B00870ADE /* Monty_Hall_AppUITests.swift */; };
+		4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F41C25DCA3EA00870ADE /* MontyHallProblem.swift */; };
+		4D36F43025DCA7B900870ADE /* DoorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */; };
+		4D36F43525DCAF6A00870ADE /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F43425DCAF6A00870ADE /* PuzzleViewController.swift */; };
+		4D36F44A25DCB03F00870ADE /* PuzzleUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F44925DCB03F00870ADE /* PuzzleUserInterface.swift */; };
+		4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */; };
+		4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30125DD64F200304BA6 /* SecondChoice.swift */; };
+		4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30625DD656500304BA6 /* Experiment.swift */; };
+		4DC1A31225DD6A3000304BA6 /* DoorCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */; };
+		4DC1A31A25DD990500304BA6 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A31925DD990500304BA6 /* Door.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D36F3F925DCA39B00870ADE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D36F3DA25DCA39800870ADE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D36F3E125DCA39800870ADE;
+			remoteInfo = "Monty Hall App";
+		};
+		4D36F40425DCA39B00870ADE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D36F3DA25DCA39800870ADE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D36F3E125DCA39800870ADE;
+			remoteInfo = "Monty Hall App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D36F3E225DCA39800870ADE /* Monty Hall App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monty Hall App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D36F3E525DCA39800870ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D36F3E725DCA39800870ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4D36F3EC25DCA39900870ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D36F3EE25DCA39B00870ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D36F3F125DCA39B00870ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D36F3F325DCA39B00870ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D36F3F825DCA39B00870ADE /* Monty Hall AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monty Hall AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D36F3FC25DCA39B00870ADE /* Monty_Hall_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monty_Hall_AppTests.swift; sourceTree = "<group>"; };
+		4D36F3FE25DCA39B00870ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D36F40325DCA39B00870ADE /* Monty Hall AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monty Hall AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D36F40725DCA39B00870ADE /* Monty_Hall_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monty_Hall_AppUITests.swift; sourceTree = "<group>"; };
+		4D36F40925DCA39B00870ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D36F41C25DCA3EA00870ADE /* MontyHallProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontyHallProblem.swift; sourceTree = "<group>"; };
+		4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D36F43425DCAF6A00870ADE /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
+		4D36F44925DCB03F00870ADE /* PuzzleUserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleUserInterface.swift; sourceTree = "<group>"; };
+		4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionView.swift; sourceTree = "<group>"; };
+		4DC1A30125DD64F200304BA6 /* SecondChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChoice.swift; sourceTree = "<group>"; };
+		4DC1A30625DD656500304BA6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
+		4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		4DC1A31925DD990500304BA6 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D36F3DF25DCA39800870ADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D36F3F525DCA39B00870ADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D36F40025DCA39B00870ADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D1EB67125E4999F00795785 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		4D36F3D925DCA39800870ADE = {
+			isa = PBXGroup;
+			children = (
+				4D36F3E425DCA39800870ADE /* Monty Hall App */,
+				4D36F3FB25DCA39B00870ADE /* Monty Hall AppTests */,
+				4D36F40625DCA39B00870ADE /* Monty Hall AppUITests */,
+				4D36F3E325DCA39800870ADE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D36F3E325DCA39800870ADE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F3E225DCA39800870ADE /* Monty Hall App.app */,
+				4D36F3F825DCA39B00870ADE /* Monty Hall AppTests.xctest */,
+				4D36F40325DCA39B00870ADE /* Monty Hall AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D36F3E425DCA39800870ADE /* Monty Hall App */ = {
+			isa = PBXGroup;
+			children = (
+				4D1EB67125E4999F00795785 /* Communication */,
+				4D36F41925DCA3AD00870ADE /* View */,
+				4D36F41B25DCA3BA00870ADE /* Controller */,
+				4D36F41825DCA3A900870ADE /* Model */,
+				4D36F3E525DCA39800870ADE /* AppDelegate.swift */,
+				4D36F3E725DCA39800870ADE /* SceneDelegate.swift */,
+				4D36F3EB25DCA39900870ADE /* Main.storyboard */,
+				4D36F3EE25DCA39B00870ADE /* Assets.xcassets */,
+				4D36F3F025DCA39B00870ADE /* LaunchScreen.storyboard */,
+				4D36F3F325DCA39B00870ADE /* Info.plist */,
+			);
+			path = "Monty Hall App";
+			sourceTree = "<group>";
+		};
+		4D36F3FB25DCA39B00870ADE /* Monty Hall AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F3FC25DCA39B00870ADE /* Monty_Hall_AppTests.swift */,
+				4D36F3FE25DCA39B00870ADE /* Info.plist */,
+			);
+			path = "Monty Hall AppTests";
+			sourceTree = "<group>";
+		};
+		4D36F40625DCA39B00870ADE /* Monty Hall AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F40725DCA39B00870ADE /* Monty_Hall_AppUITests.swift */,
+				4D36F40925DCA39B00870ADE /* Info.plist */,
+			);
+			path = "Monty Hall AppUITests";
+			sourceTree = "<group>";
+		};
+		4D36F41825DCA3A900870ADE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F41C25DCA3EA00870ADE /* MontyHallProblem.swift */,
+				4DC1A31925DD990500304BA6 /* Door.swift */,
+				4DC1A30125DD64F200304BA6 /* SecondChoice.swift */,
+				4DC1A30625DD656500304BA6 /* Experiment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D36F41925DCA3AD00870ADE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F44925DCB03F00870ADE /* PuzzleUserInterface.swift */,
+				4D36F45125DCB05300870ADE /* Door Collection View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D36F41B25DCA3BA00870ADE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D36F43425DCAF6A00870ADE /* PuzzleViewController.swift */,
+				4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D36F45125DCB05300870ADE /* Door Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */,
+				4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */,
+			);
+			path = "Door Collection View";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D36F3E125DCA39800870ADE /* Monty Hall App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D36F40C25DCA39B00870ADE /* Build configuration list for PBXNativeTarget "Monty Hall App" */;
+			buildPhases = (
+				4D36F3DE25DCA39800870ADE /* Sources */,
+				4D36F3DF25DCA39800870ADE /* Frameworks */,
+				4D36F3E025DCA39800870ADE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monty Hall App";
+			productName = "Monty Hall App";
+			productReference = 4D36F3E225DCA39800870ADE /* Monty Hall App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D36F3F725DCA39B00870ADE /* Monty Hall AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D36F40F25DCA39B00870ADE /* Build configuration list for PBXNativeTarget "Monty Hall AppTests" */;
+			buildPhases = (
+				4D36F3F425DCA39B00870ADE /* Sources */,
+				4D36F3F525DCA39B00870ADE /* Frameworks */,
+				4D36F3F625DCA39B00870ADE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D36F3FA25DCA39B00870ADE /* PBXTargetDependency */,
+			);
+			name = "Monty Hall AppTests";
+			productName = "Monty Hall AppTests";
+			productReference = 4D36F3F825DCA39B00870ADE /* Monty Hall AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4D36F40225DCA39B00870ADE /* Monty Hall AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D36F41225DCA39B00870ADE /* Build configuration list for PBXNativeTarget "Monty Hall AppUITests" */;
+			buildPhases = (
+				4D36F3FF25DCA39B00870ADE /* Sources */,
+				4D36F40025DCA39B00870ADE /* Frameworks */,
+				4D36F40125DCA39B00870ADE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D36F40525DCA39B00870ADE /* PBXTargetDependency */,
+			);
+			name = "Monty Hall AppUITests";
+			productName = "Monty Hall AppUITests";
+			productReference = 4D36F40325DCA39B00870ADE /* Monty Hall AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D36F3DA25DCA39800870ADE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					4D36F3E125DCA39800870ADE = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					4D36F3F725DCA39B00870ADE = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 4D36F3E125DCA39800870ADE;
+					};
+					4D36F40225DCA39B00870ADE = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 4D36F3E125DCA39800870ADE;
+					};
+				};
+			};
+			buildConfigurationList = 4D36F3DD25DCA39800870ADE /* Build configuration list for PBXProject "Monty Hall App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D36F3D925DCA39800870ADE;
+			productRefGroup = 4D36F3E325DCA39800870ADE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D36F3E125DCA39800870ADE /* Monty Hall App */,
+				4D36F3F725DCA39B00870ADE /* Monty Hall AppTests */,
+				4D36F40225DCA39B00870ADE /* Monty Hall AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D36F3E025DCA39800870ADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D36F3F225DCA39B00870ADE /* LaunchScreen.storyboard in Resources */,
+				4D36F3EF25DCA39B00870ADE /* Assets.xcassets in Resources */,
+				4D36F3ED25DCA39900870ADE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D36F3F625DCA39B00870ADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D36F40125DCA39B00870ADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D36F3DE25DCA39800870ADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D36F43025DCA7B900870ADE /* DoorCollectionViewCell.swift in Sources */,
+				4DC1A31A25DD990500304BA6 /* Door.swift in Sources */,
+				4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */,
+				4DC1A31225DD6A3000304BA6 /* DoorCollectionViewDelegate.swift in Sources */,
+				4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */,
+				4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */,
+				4D36F43525DCAF6A00870ADE /* PuzzleViewController.swift in Sources */,
+				4D36F44A25DCB03F00870ADE /* PuzzleUserInterface.swift in Sources */,
+				4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */,
+				4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */,
+				4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D36F3F425DCA39B00870ADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D36F3FD25DCA39B00870ADE /* Monty_Hall_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D36F3FF25DCA39B00870ADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D36F40825DCA39B00870ADE /* Monty_Hall_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D36F3FA25DCA39B00870ADE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D36F3E125DCA39800870ADE /* Monty Hall App */;
+			targetProxy = 4D36F3F925DCA39B00870ADE /* PBXContainerItemProxy */;
+		};
+		4D36F40525DCA39B00870ADE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D36F3E125DCA39800870ADE /* Monty Hall App */;
+			targetProxy = 4D36F40425DCA39B00870ADE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D36F3EB25DCA39900870ADE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D36F3EC25DCA39900870ADE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D36F3F025DCA39B00870ADE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D36F3F125DCA39B00870ADE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D36F40A25DCA39B00870ADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D36F40B25DCA39B00870ADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D36F40D25DCA39B00870ADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72MQ9UJM4S;
+				INFOPLIST_FILE = "Monty Hall App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Apple-Developer-Academy.Monty-Hall-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D36F40E25DCA39B00870ADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72MQ9UJM4S;
+				INFOPLIST_FILE = "Monty Hall App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Apple-Developer-Academy.Monty-Hall-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4D36F41025DCA39B00870ADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72MQ9UJM4S;
+				INFOPLIST_FILE = "Monty Hall AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Apple-Developer-Academy.Monty-Hall-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Monty Hall App.app/Monty Hall App";
+			};
+			name = Debug;
+		};
+		4D36F41125DCA39B00870ADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72MQ9UJM4S;
+				INFOPLIST_FILE = "Monty Hall AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Apple-Developer-Academy.Monty-Hall-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Monty Hall App.app/Monty Hall App";
+			};
+			name = Release;
+		};
+		4D36F41325DCA39B00870ADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72MQ9UJM4S;
+				INFOPLIST_FILE = "Monty Hall AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Apple-Developer-Academy.Monty-Hall-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Monty Hall App";
+			};
+			name = Debug;
+		};
+		4D36F41425DCA39B00870ADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72MQ9UJM4S;
+				INFOPLIST_FILE = "Monty Hall AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Apple-Developer-Academy.Monty-Hall-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Monty Hall App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D36F3DD25DCA39800870ADE /* Build configuration list for PBXProject "Monty Hall App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D36F40A25DCA39B00870ADE /* Debug */,
+				4D36F40B25DCA39B00870ADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D36F40C25DCA39B00870ADE /* Build configuration list for PBXNativeTarget "Monty Hall App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D36F40D25DCA39B00870ADE /* Debug */,
+				4D36F40E25DCA39B00870ADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D36F40F25DCA39B00870ADE /* Build configuration list for PBXNativeTarget "Monty Hall AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D36F41025DCA39B00870ADE /* Debug */,
+				4D36F41125DCA39B00870ADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D36F41225DCA39B00870ADE /* Build configuration list for PBXNativeTarget "Monty Hall AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D36F41325DCA39B00870ADE /* Debug */,
+				4D36F41425DCA39B00870ADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D36F3DA25DCA39800870ADE /* Project object */;
+}
