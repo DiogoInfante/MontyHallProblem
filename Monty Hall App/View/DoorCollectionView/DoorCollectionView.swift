@@ -38,7 +38,6 @@ class DoorCollectionView: UICollectionView {
         layout.minimumLineSpacing = space
         /// Item Atributtion
         layout.itemSize = CGSize(width: cellWidthConstant, height: cellHeightConstant)
-        
         return layout
     }
     

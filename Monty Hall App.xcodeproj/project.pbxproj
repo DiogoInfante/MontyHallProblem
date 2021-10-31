@@ -33,7 +33,6 @@
 		4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */; };
 		4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30125DD64F200304BA6 /* SecondChoice.swift */; };
 		4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30625DD656500304BA6 /* Experiment.swift */; };
-		4DC1A31225DD6A3000304BA6 /* DoorCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */; };
 		4DC1A31A25DD990500304BA6 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A31925DD990500304BA6 /* Door.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionView.swift; sourceTree = "<group>"; };
 		4DC1A30125DD64F200304BA6 /* SecondChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChoice.swift; sourceTree = "<group>"; };
 		4DC1A30625DD656500304BA6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
-		4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		4DC1A31925DD990500304BA6 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +177,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4D14AA58272E368B00B66376 /* GameInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				4D14AA4B272E180D00B66376 /* GameInteractor.swift */,
+				4D14AA4F272E18EF00B66376 /* GameEvent.swift */,
+				4D14AA4D272E18DC00B66376 /* GameState.swift */,
+				4D14AA51272E19B000B66376 /* ErrorEvent.swift */,
+			);
+			path = GameInteractor;
+			sourceTree = "<group>";
+		};
 		4D36F3D925DCA39800870ADE = {
 			isa = PBXGroup;
 			children = (
@@ -258,11 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				4D14AA3F272DE7B700B66376 /* BaseViewController.swift */,
-				4DC1A31125DD6A3000304BA6 /* DoorCollectionViewDelegate.swift */,
-				4D14AA4B272E180D00B66376 /* GameInteractor.swift */,
-				4D14AA4D272E18DC00B66376 /* GameState.swift */,
-				4D14AA4F272E18EF00B66376 /* GameEvent.swift */,
-				4D14AA51272E19B000B66376 /* ErrorEvent.swift */,
+				4D14AA58272E368B00B66376 /* GameInteractor */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,7 +439,6 @@
 				4DC1A31A25DD990500304BA6 /* Door.swift in Sources */,
 				4D14AA4E272E18DC00B66376 /* GameState.swift in Sources */,
 				4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */,
-				4DC1A31225DD6A3000304BA6 /* DoorCollectionViewDelegate.swift in Sources */,
 				4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */,
 				4D14AA3E272DE6FD00B66376 /* AppContainer.swift in Sources */,
 				4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */,

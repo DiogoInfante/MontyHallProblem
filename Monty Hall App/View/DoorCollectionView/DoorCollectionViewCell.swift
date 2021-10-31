@@ -11,6 +11,7 @@ import Foundation
 // MARK: Door Collection View Cell
 class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     private var _door = Door(-1)
+    /// Automatically deals with the door content
     var door: Door {
         get {
             return _door
@@ -24,6 +25,10 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
             }
         }
     }
+    /// Called by notification when the model is changed
+    /// Updates door state visually by calling openDoor() or closeDoor()
+    /// - Parameters:
+    ///     - newState: New door state
     func stateUpdated(_ newState: DoorState) {
         switch newState {
         case .opened:
@@ -32,6 +37,10 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
             closeDoor()
         }
     }
+    /// Called by notification when the model is changed
+    /// Updates prize content visually by calling prizeDoorSetup() or goatDoorSetup()
+    /// - Parameters:
+    ///     - isPrized: Boolean that tells if the door has a prize behind
     func prizeUpdated(_ isPrized: Bool) {
         isPrized ? prizeDoorSetup() : goatDoorSetup()
     }
@@ -83,13 +92,9 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         labelConstraints()
     }
     /// Label text setup
+    /// - Parameters: doorNumber
     func setDoorNumber(_ doorNumber: Int) {
         label.text = String(doorNumber)
-        label.textAlignment = .center
-    }
-    /// Debug label text setup
-    private func debugDoor(_ door: Door) {
-        label.text = ("\(door.id) \(door.isPrized)")
         label.textAlignment = .center
     }
     /// Prize door setup
@@ -100,7 +105,7 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     private func goatDoorSetup() {
         behindView.image = UIImage(named: "GoatDoor")
     }
-    /// Open the door
+    /// Opens the door
     private func openDoor() {
         doorView.alpha = 0
         label.alpha = 0

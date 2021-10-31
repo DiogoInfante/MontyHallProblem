@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Error Event
 enum ErrorEvent {
     case error
 }

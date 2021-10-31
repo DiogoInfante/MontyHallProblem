@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Available Game Events
 enum GameEvent: Equatable {
     case start
     case madeFirstChoice(Int)

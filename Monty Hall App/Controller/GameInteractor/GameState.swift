@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Available Game States
 enum GameState: Equatable {
     case idle
     case waitingForFirstChoice

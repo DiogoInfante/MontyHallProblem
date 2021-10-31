@@ -7,8 +7,11 @@
 
 import UIKit
 
+/// UIApplication Extensions
 extension UIApplication {
-
+    /// Gets top view controller
+    /// - Parameters: Base View Controller
+    /// - Returns: Optionally returns the top View Controller
     class func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
 
         if let nav = base as? UINavigationController {
