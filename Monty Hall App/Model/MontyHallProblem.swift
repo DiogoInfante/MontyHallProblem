@@ -17,6 +17,8 @@ class MontyHallProblem {
     var prizeDoor: Door = .null
     /// Fist choice
     var choosenDoor: Door = .null
+    /// Results
+    var results = Results()
     /// Initializes a Monty Hall Problem
     init(_ numberOfDoors: Int) {
         self.numberOfDoors = numberOfDoors
@@ -32,7 +34,6 @@ class MontyHallProblem {
         let prizeDoorId = Int.random(in: 0...numberOfDoors-1)
         doors[prizeDoorId].isPrized = true
         self.prizeDoor = doors[prizeDoorId]
-        print(prizeDoorId)
     }
     /// The contestor will select a door from the set
     /// - Parameters:
@@ -58,16 +59,19 @@ class MontyHallProblem {
         case .keepDoor:
             /// The contestor wins if the prize is behind it
             if choosenDoor.isPrized {
+                results.addResult(win: true, .keepDoor)
                 return true
             }
         /// In case of switching doors
         case .switchDoor:
             /// The contestor wins if the prize is behind the closed door
             if !choosenDoor.isPrized {
+                results.addResult(win: true, .switchDoor)
                 return true
             }
         }
         /// If neither possibilities of success happens, then the contestor lose
+        results.addResult(win: false, secondChoice)
         return false
     }
     /// Reveals Prize: Open all doors

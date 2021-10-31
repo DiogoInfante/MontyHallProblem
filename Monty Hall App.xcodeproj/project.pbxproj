@@ -19,6 +19,7 @@
 		4D14AA52272E19B000B66376 /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA51272E19B000B66376 /* ErrorEvent.swift */; };
 		4D14AA55272E1A6A00B66376 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */; };
 		4D14AA57272E25B700B66376 /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA56272E25B700B66376 /* ResultLabel.swift */; };
+		4D14AA5A272E39CD00B66376 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA59272E39CD00B66376 /* Results.swift */; };
 		4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E525DCA39800870ADE /* AppDelegate.swift */; };
 		4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E725DCA39800870ADE /* SceneDelegate.swift */; };
 		4D36F3ED25DCA39900870ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D36F3EB25DCA39900870ADE /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		4D14AA51272E19B000B66376 /* ErrorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEvent.swift; sourceTree = "<group>"; };
 		4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		4D14AA56272E25B700B66376 /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
+		4D14AA59272E39CD00B66376 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		4D36F3E225DCA39800870ADE /* Monty Hall App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monty Hall App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D36F3E525DCA39800870ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D36F3E725DCA39800870ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				4DC1A31925DD990500304BA6 /* Door.swift */,
 				4DC1A30125DD64F200304BA6 /* SecondChoice.swift */,
 				4DC1A30625DD656500304BA6 /* Experiment.swift */,
+				4D14AA59272E39CD00B66376 /* Results.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				4D36F43525DCAF6A00870ADE /* PuzzleVC.swift in Sources */,
 				4D14AA43272DE7D500B66376 /* AssetView.swift in Sources */,
 				4D14AA48272DE82000B66376 /* UIViewExtensions.swift in Sources */,
+				4D14AA5A272E39CD00B66376 /* Results.swift in Sources */,
 				4D14AA57272E25B700B66376 /* ResultLabel.swift in Sources */,
 				4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */,
 				4D14AA4C272E180D00B66376 /* GameInteractor.swift in Sources */,
