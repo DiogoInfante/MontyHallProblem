@@ -16,11 +16,13 @@ enum Asset: String {
     // MARK: - Common
     /// Backgrounds
     case background
+    case goat
+    case car
     // MARK: - Scenes
-    /// Animation Tutorial Scene
-    case circle
-    case square
-    case star
+    /// Home Scene
+    case banner
+    case play
+    case experiment
     // MARK: - Methods
     /// Gets an UIImage from given asset if it's a valid one.
     /// - Parameters:

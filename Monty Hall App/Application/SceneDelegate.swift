@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         /// Root view controller: HomeVC
         let rootViewController: UIViewController = UINavigationController(
-            rootViewController: appContainer.makePuzzleVC())
+            rootViewController: appContainer.makeHomeVC())
         window.rootViewController = rootViewController
         /// Window update
         self.window = window

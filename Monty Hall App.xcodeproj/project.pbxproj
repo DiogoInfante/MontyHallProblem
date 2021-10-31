@@ -31,6 +31,8 @@
 		4D36F43025DCA7B900870ADE /* DoorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */; };
 		4D36F43525DCAF6A00870ADE /* PuzzleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F43425DCAF6A00870ADE /* PuzzleVC.swift */; };
 		4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F44925DCB03F00870ADE /* PuzzleView.swift */; };
+		4D8B9BAC272F4A280005B33C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAB272F4A280005B33C /* HomeView.swift */; };
+		4D8B9BB0272F4A450005B33C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAF272F4A450005B33C /* HomeVC.swift */; };
 		4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */; };
 		4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30125DD64F200304BA6 /* SecondChoice.swift */; };
 		4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30625DD656500304BA6 /* Experiment.swift */; };
@@ -85,6 +87,8 @@
 		4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D36F43425DCAF6A00870ADE /* PuzzleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleVC.swift; sourceTree = "<group>"; };
 		4D36F44925DCB03F00870ADE /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		4D8B9BAB272F4A280005B33C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4D8B9BAF272F4A450005B33C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionView.swift; sourceTree = "<group>"; };
 		4DC1A30125DD64F200304BA6 /* SecondChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChoice.swift; sourceTree = "<group>"; };
 		4DC1A30625DD656500304BA6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
@@ -119,8 +123,8 @@
 		4D14AA39272DE6B100B66376 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				4D14AA3A272DE6C300B66376 /* View */,
-				4D14AA3B272DE6CD00B66376 /* Controller */,
+				4D8B9BAA272F4A1C0005B33C /* Home */,
+				4D8B9BA9272F4A0F0005B33C /* Puzzle */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -282,6 +286,40 @@
 				4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */,
 			);
 			path = DoorCollectionView;
+			sourceTree = "<group>";
+		};
+		4D8B9BA9272F4A0F0005B33C /* Puzzle */ = {
+			isa = PBXGroup;
+			children = (
+				4D14AA3A272DE6C300B66376 /* View */,
+				4D14AA3B272DE6CD00B66376 /* Controller */,
+			);
+			path = Puzzle;
+			sourceTree = "<group>";
+		};
+		4D8B9BAA272F4A1C0005B33C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B9BAB272F4A280005B33C /* HomeView.swift */,
+				4D8B9BAD272F4A2D0005B33C /* View */,
+				4D8B9BAE272F4A330005B33C /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4D8B9BAD272F4A2D0005B33C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B9BAF272F4A450005B33C /* HomeVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D8B9BAE272F4A330005B33C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +495,8 @@
 				4D14AA52272E19B000B66376 /* ErrorEvent.swift in Sources */,
 				4D14AA45272DE7DC00B66376 /* Asset.swift in Sources */,
 				4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */,
+				4D8B9BB0272F4A450005B33C /* HomeVC.swift in Sources */,
+				4D8B9BAC272F4A280005B33C /* HomeView.swift in Sources */,
 				4D14AA50272E18EF00B66376 /* GameEvent.swift in Sources */,
 				4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */,
 			);

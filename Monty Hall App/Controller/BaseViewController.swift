@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     ///    - mainView: The View displayed by the ViewController
     /// - Returns: A new ViewController with the provided View.
     init(asset: Asset = .background) {
-        self.myView = AssetView(.background)
+        self.myView = AssetView()
         super.init(nibName: nil, bundle: nil)
     }
     override func viewDidLoad() {
