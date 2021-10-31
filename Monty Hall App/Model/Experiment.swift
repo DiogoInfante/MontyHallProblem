@@ -37,7 +37,7 @@ class Experiment {
             /// Monty Hall Setup
             let montyHall = MontyHallProblem(numberOfDoors)
             /// First Choice
-            montyHall.firstChoice(id: Int.random(in: 0..<numberOfDoors-1))
+            montyHall.firstChoice(Int.random(in: 0..<numberOfDoors-1))
             /// Second Choice
             if montyHall.secondChoice(secondChoice) {
                 /// Interaction update
@@ -57,4 +57,7 @@ class Experiment {
         multiplePuzzles()
     }
 }
-
+/// Test data
+//        let experiment = Experiment(numberOfDoors: 100, rounds: 10000, secondChoice: .switchDoor)
+//        print(experiment.wins)
+//        print(experiment.winningRate)

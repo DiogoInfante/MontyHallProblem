@@ -11,12 +11,12 @@ import Foundation
 class MontyHallProblem {
     /// number Of Doors
     let numberOfDoors: Int
-    /// Prized door
-    var prizeDoor: Door
     /// List of doors
     var doors: [Door] = []
+    /// Prized door
+    var prizeDoor: Door = .null
     /// Fist choice
-    var choosenDoor = Door(-1)
+    var choosenDoor: Door = .null
     /// Initializes a Monty Hall Problem
     init(_ numberOfDoors: Int) {
         self.numberOfDoors = numberOfDoors
@@ -24,14 +24,19 @@ class MontyHallProblem {
         for i in 0...numberOfDoors-1 {
             doors.append(Door(i))
         }
-        /// Setup a prize door
+        /// Adds a prize to a random door
+        addPrize()
+    }
+    /// Adds a prize to a random door
+    func addPrize() {
         let prizeDoorId = Int.random(in: 0...numberOfDoors-1)
-        doors[prizeDoorId].setAsPrized()
-        prizeDoor = doors[prizeDoorId]
+        doors[prizeDoorId].isPrized = true
+        self.prizeDoor = doors[prizeDoorId]
+        print(prizeDoorId)
     }
     /// The contestor will select a door from the set
     /// - Parameters:
-    func firstChoice(id: Int) {
+    func firstChoice(_ id: Int) {
         choosenDoor = doors[id]
         /// Monty will always open goats
         for door in doors {
@@ -65,6 +70,12 @@ class MontyHallProblem {
         /// If neither possibilities of success happens, then the contestor lose
         return false
     }
+    /// Reveals Prize: Open all doors
+    func openAll() {
+        for i in 0...numberOfDoors-1 {
+            doors[i].state = .opened
+        }
+    }
     /// Returns a random non prized door
     func randomNonPrizedDoorSelection(_ doors: [Door])->Door {
         /// Filter eligible doors
@@ -74,15 +85,12 @@ class MontyHallProblem {
     }
     /// Resets the interaction
     func reset() {
-        /// Clear old doors
-        doors.removeAll()
-        /// Populate door array
+        /// Close all doors and removes the prize
         for i in 0...numberOfDoors-1 {
-            doors.append(Door(i))
+            doors[i].state = .closed
+            doors[i].isPrized = false
         }
-        /// Setup a prize door
-        let prizeDoorId = Int.random(in: 0...numberOfDoors-1)
-        doors[prizeDoorId].setAsPrized()
-        prizeDoor = doors[prizeDoorId]
+        /// Adds the prize to a random door
+        addPrize()
     }
 }

@@ -38,8 +38,10 @@ class DoorCollectionView: UICollectionView {
         layout.minimumLineSpacing = space
         /// Item Atributtion
         layout.itemSize = CGSize(width: cellWidthConstant, height: cellHeightConstant)
+        
         return layout
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

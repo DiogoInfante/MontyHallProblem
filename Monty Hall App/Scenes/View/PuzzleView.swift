@@ -14,9 +14,9 @@ class PuzzleView: UIView {
     /// Keep choice button
     let choice = ChoiceView()
     /// Result label
-    let result = UILabel()
-    /// Restart
-    let restart = UIButton()
+    let result = ResultLabel()
+    /// Reset
+    let reset = UIButton()
     /// Initializes a Puzzle View
     init() {
         super.init(frame: .zero)
@@ -43,12 +43,12 @@ class PuzzleView: UIView {
         result.constraint(to: choice)
     }
     /// Adds constraints to restart - Hierarchy 4.
-    fileprivate func restartConstraints() {
-        restart.translatesAutoresizingMaskIntoConstraints = false
-        restart.bottomAnchor.constraint(equalTo: collectionView.topAnchor).isActive = true
-        restart.rightAnchor.constraint(equalTo: collectionView.rightAnchor).isActive = true
-        restart.heightAnchor.constraint(equalTo: choice.heightAnchor).isActive = true
-        restart.widthAnchor.constraint(equalTo: restart.heightAnchor).isActive = true
+    fileprivate func resetConstraints() {
+        reset.translatesAutoresizingMaskIntoConstraints = false
+        reset.bottomAnchor.constraint(equalTo: collectionView.topAnchor).isActive = true
+        reset.rightAnchor.constraint(equalTo: collectionView.rightAnchor).isActive = true
+        reset.heightAnchor.constraint(equalTo: choice.heightAnchor).isActive = true
+        reset.widthAnchor.constraint(equalTo: reset.heightAnchor).isActive = true
     }
     /// Setups UI
     func setupUI() {
@@ -63,24 +63,9 @@ class PuzzleView: UIView {
         self.addSubview(result)
         resultConstraints()
         /// Hierarchy 4 - Restart.
-        self.addSubview(restart)
-        restartConstraints()
-        restart.backgroundColor = .gray
-    }
-    /// Set label layout
-    /// - Parameters:
-    ///     - didWin: Indicates if player won the prize
-    func updateLabel(didWin: Bool) {
-        if didWin {
-            result.text = "Win!"
-            result.backgroundColor = .green
-        }
-        else {
-            result.text = "Lost"
-            result.backgroundColor = .systemRed
-        }
-        result.textColor = .white
-        result.textAlignment = .center
+        self.addSubview(reset)
+        resetConstraints()
+        reset.backgroundColor = .gray
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

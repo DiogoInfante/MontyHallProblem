@@ -10,6 +10,7 @@ import Foundation
 /// Oberserver Protocol
 protocol ObserverProtocol: AnyObject {
     func stateUpdated(_ newState: DoorState)
+    func prizeUpdated(_ isPrized: Bool)
 }
 /// Door Model: Subject
 class Door {
@@ -17,7 +18,9 @@ class Door {
     let id: Int
     /// State: Initializes closed
     private var _state: DoorState = .closed
-    /// Update state with observer
+    /// isPrized: Indicates if the door is prized
+    private var _isPrized: Bool = false
+    /// Update state notifying observer
     var state : DoorState {
         get {
             return _state
@@ -27,24 +30,29 @@ class Door {
             notifyObserver()
         }
     }
-    /// Indicates if the door is prized
-    var isPrized: Bool
+    /// Update prize notifying observer
+    var isPrized : Bool {
+        get {
+            return _isPrized
+        }
+        set {
+            _isPrized = newValue
+            notifyObserver()
+        }
+    }
     /// Initializes a Door
     /// - Parameters: id: Door id
     init(_ id: Int) {
         self.id = id
-        self.isPrized = false
-    }
-    /// Set door as prized
-    func setAsPrized() {
-        self.isPrized = true
     }
     /// Observer
     weak var observer: ObserverProtocol?
     /// Notification
     private func notifyObserver() {
         observer?.stateUpdated(_state)
+        observer?.prizeUpdated(_isPrized)
     }
+    static let null = Door(-1)
 }
 /// Doors States
 enum DoorState {

@@ -17,11 +17,23 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         }
         set {
             _door = newValue
+            if door.isPrized {
+                prizeDoorSetup()
+            } else {
+                goatDoorSetup()
+            }
         }
     }
-    
     func stateUpdated(_ newState: DoorState) {
-        label.text = "Updated"
+        switch newState {
+        case .opened:
+            openDoor()
+        case .closed:
+            closeDoor()
+        }
+    }
+    func prizeUpdated(_ isPrized: Bool) {
+        isPrized ? prizeDoorSetup() : goatDoorSetup()
     }
     /// Cell identifier
     static let identifier = "DoorCollectionViewCell"
@@ -76,22 +88,27 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         label.textAlignment = .center
     }
     /// Debug label text setup
-    func debugDoor(_ door: Door) {
+    private func debugDoor(_ door: Door) {
         label.text = ("\(door.id) \(door.isPrized)")
         label.textAlignment = .center
     }
     /// Prize door setup
-    func prizeDoorSetup() {
+    private func prizeDoorSetup() {
         behindView.image = UIImage(named: "FerrariDoor")
     }
     /// Goat door setup
-    func goatDoorSetup() {
+    private func goatDoorSetup() {
         behindView.image = UIImage(named: "GoatDoor")
     }
-    /// Open door
-    func openDoor() {
+    /// Open the door
+    private func openDoor() {
         doorView.alpha = 0
         label.alpha = 0
+    }
+    /// Closes the door
+    private func closeDoor() {
+        doorView.alpha = 1
+        label.alpha = 1
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
