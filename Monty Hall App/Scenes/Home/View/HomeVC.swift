@@ -19,11 +19,12 @@ class HomeVC: BaseViewController {
     init(factory: Factory) {
         self.factory = factory
         super.init()
-        self.myView.update(.background)
     }
     /// View did load cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// Background
+        self.myView.update(.background)
         /// Scene construction.
         view.addSubview(scene)
         scene.setScene(root: view)

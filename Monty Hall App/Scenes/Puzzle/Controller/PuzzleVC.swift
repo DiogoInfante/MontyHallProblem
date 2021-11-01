@@ -13,8 +13,14 @@ class PuzzleVC: BaseViewController {
     let scene = PuzzleView()
     /// Monty Hall problem
     var montyHallProblem = MontyHallProblem(3)
+    /// Base View Controller init
+    init() {
+        super.init()
+    }
     /// VIew did load cycle
     override func viewDidLoad() {
+        /// Background
+        self.myView.update(.puzzleBackground)
         /// Scene construction
         view.addSubview(scene)
         scene.setScene(root: view)
@@ -45,6 +51,9 @@ class PuzzleVC: BaseViewController {
         if GameInteractor.interactor.currrentState == .ended {
             GameInteractor.interactor.reset()
         }
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 /// Collection View Extension

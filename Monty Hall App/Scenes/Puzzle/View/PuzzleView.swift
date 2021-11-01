@@ -27,8 +27,8 @@ class PuzzleView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         collectionView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        collectionView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.95).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 0.6).isActive = true
     }
     /// Adds constraints to results - Hierarchy 2.
     fileprivate func choiceConstraints() {

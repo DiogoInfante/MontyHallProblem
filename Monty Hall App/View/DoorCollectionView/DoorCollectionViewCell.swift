@@ -47,9 +47,9 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     /// Cell identifier
     static let identifier = "DoorCollectionViewCell"
     /// Door
-    let doorView = UIImageView()
+    let doorView = AssetView(.door)
     /// Behind View
-    let behindView = UIImageView()
+    let behindView = AssetView(.goatDoor)
     /// label
     let label = UILabel()
     /// Adds constraints to behindView - Hierarchy 1.
@@ -78,15 +78,12 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        /// Background
-        contentView.backgroundColor = .gray
         /// Hierarchy 1 - behind view.
         contentView.addSubview(behindView)
         behindViewConstraints()
         /// Hierarchy 2 - door.
         contentView.addSubview(doorView)
         doorViewConstraints()
-        doorView.image = UIImage(named: "Door")
         /// Hierarchy 3 - label.
         contentView.addSubview(label)
         labelConstraints()
@@ -99,11 +96,11 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     }
     /// Prize door setup
     private func prizeDoorSetup() {
-        behindView.image = UIImage(named: "FerrariDoor")
+        behindView.update(.carDoor)
     }
     /// Goat door setup
     private func goatDoorSetup() {
-        behindView.image = UIImage(named: "GoatDoor")
+        behindView.update(.goatDoor)
     }
     /// Opens the door
     private func openDoor() {

@@ -23,6 +23,11 @@ enum Asset: String {
     case banner
     case play
     case experiment
+    /// Puzzle Scene
+    case puzzleBackground
+    case door
+    case carDoor
+    case goatDoor
     // MARK: - Methods
     /// Gets an UIImage from given asset if it's a valid one.
     /// - Parameters:
