@@ -89,14 +89,17 @@ class PuzzleView: UIView {
         /// Start state
         waitingForFirstChoice()
     }
+    /// Waiting For First Choice UI Updates
     func waitingForFirstChoice() {
         reset.fadeOut()
         panel.subView.text = "Tap to choose a door"
     }
+    /// Waiting For First Second UI Updates
     func waitingForSecondChoice() {
         choice.fadeIn()
         panel.subView.text = "Do you want to keep your choice or switch to:"
     }
+    /// Ended UI Updates
     func ended() {
         choice.fadeOut()
         reset.fadeIn()
