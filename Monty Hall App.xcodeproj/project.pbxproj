@@ -12,13 +12,12 @@
 		4D14AA43272DE7D500B66376 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA42272DE7D500B66376 /* AssetView.swift */; };
 		4D14AA45272DE7DC00B66376 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA44272DE7DC00B66376 /* Asset.swift */; };
 		4D14AA48272DE82000B66376 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA47272DE82000B66376 /* UIViewExtensions.swift */; };
-		4D14AA4A272DF19200B66376 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA49272DF19200B66376 /* ChoiceView.swift */; };
 		4D14AA4C272E180D00B66376 /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA4B272E180D00B66376 /* GameInteractor.swift */; };
 		4D14AA4E272E18DC00B66376 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA4D272E18DC00B66376 /* GameState.swift */; };
 		4D14AA50272E18EF00B66376 /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA4F272E18EF00B66376 /* GameEvent.swift */; };
 		4D14AA52272E19B000B66376 /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA51272E19B000B66376 /* ErrorEvent.swift */; };
 		4D14AA55272E1A6A00B66376 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */; };
-		4D14AA57272E25B700B66376 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA56272E25B700B66376 /* Panel.swift */; };
+		4D14AA57272E25B700B66376 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA56272E25B700B66376 /* PanelView.swift */; };
 		4D14AA5A272E39CD00B66376 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA59272E39CD00B66376 /* Results.swift */; };
 		4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E525DCA39800870ADE /* AppDelegate.swift */; };
 		4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E725DCA39800870ADE /* SceneDelegate.swift */; };
@@ -33,6 +32,7 @@
 		4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F44925DCB03F00870ADE /* PuzzleView.swift */; };
 		4D8B9BAC272F4A280005B33C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAB272F4A280005B33C /* HomeView.swift */; };
 		4D8B9BB0272F4A450005B33C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAF272F4A450005B33C /* HomeVC.swift */; };
+		4D8B9BB2272F99DD0005B33C /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */; };
 		4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */; };
 		4DC1A30225DD64F200304BA6 /* SecondChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30125DD64F200304BA6 /* SecondChoice.swift */; };
 		4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1A30625DD656500304BA6 /* Experiment.swift */; };
@@ -62,13 +62,12 @@
 		4D14AA42272DE7D500B66376 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
 		4D14AA44272DE7DC00B66376 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		4D14AA47272DE82000B66376 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		4D14AA49272DF19200B66376 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		4D14AA4B272E180D00B66376 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
 		4D14AA4D272E18DC00B66376 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		4D14AA4F272E18EF00B66376 /* GameEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEvent.swift; sourceTree = "<group>"; };
 		4D14AA51272E19B000B66376 /* ErrorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEvent.swift; sourceTree = "<group>"; };
 		4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
-		4D14AA56272E25B700B66376 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		4D14AA56272E25B700B66376 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 		4D14AA59272E39CD00B66376 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		4D36F3E225DCA39800870ADE /* Monty Hall App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monty Hall App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D36F3E525DCA39800870ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		4D36F44925DCB03F00870ADE /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		4D8B9BAB272F4A280005B33C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4D8B9BAF272F4A450005B33C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		4DC1011825DD5B6500C35C21 /* DoorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCollectionView.swift; sourceTree = "<group>"; };
 		4DC1A30125DD64F200304BA6 /* SecondChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChoice.swift; sourceTree = "<group>"; };
 		4DC1A30625DD656500304BA6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				4D36F44925DCB03F00870ADE /* PuzzleView.swift */,
-				4D14AA49272DF19200B66376 /* ChoiceView.swift */,
-				4D14AA56272E25B700B66376 /* Panel.swift */,
+				4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */,
+				4D14AA56272E25B700B66376 /* PanelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,12 +483,12 @@
 				4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */,
 				4D14AA3E272DE6FD00B66376 /* AppContainer.swift in Sources */,
 				4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */,
-				4D14AA4A272DF19200B66376 /* ChoiceView.swift in Sources */,
 				4D36F43525DCAF6A00870ADE /* PuzzleVC.swift in Sources */,
 				4D14AA43272DE7D500B66376 /* AssetView.swift in Sources */,
 				4D14AA48272DE82000B66376 /* UIViewExtensions.swift in Sources */,
 				4D14AA5A272E39CD00B66376 /* Results.swift in Sources */,
-				4D14AA57272E25B700B66376 /* Panel.swift in Sources */,
+				4D14AA57272E25B700B66376 /* PanelView.swift in Sources */,
+				4D8B9BB2272F99DD0005B33C /* ChoiceView.swift in Sources */,
 				4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */,
 				4D14AA4C272E180D00B66376 /* GameInteractor.swift in Sources */,
 				4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */,

@@ -14,11 +14,11 @@ class PuzzleView: UIView {
     /// Keep choice button
     let choice = ChoiceView()
     /// Result label
-    let panel = Panel()
+    let panel = PanelView()
     /// Stage
     let stage = AssetView(.stage)
     /// Reset
-    let reset = UIButton()
+    let reset = AssetView(.playAgain, subView: UIButton())
     /// Vertical spacing constant
     let space = UIScreen.main.bounds.height*0.03
     /// Initializes a Puzzle View
@@ -55,15 +55,15 @@ class PuzzleView: UIView {
         choice.translatesAutoresizingMaskIntoConstraints = false
         choice.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         choice.topAnchor.constraint(equalTo: stage.bottomAnchor, constant: space).isActive = true
-        choice.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1).isActive = true
-        choice.widthAnchor.constraint(equalTo: choice.heightAnchor, multiplier: 2.5).isActive = true
+        choice.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -space).isActive = true
+        choice.widthAnchor.constraint(equalTo: choice.heightAnchor, multiplier: 2).isActive = true
     }
 
     /// Adds constraints to restart - Hierarchy 5.
     fileprivate func resetConstraints() {
         reset.translatesAutoresizingMaskIntoConstraints = false
-        reset.bottomAnchor.constraint(equalTo: collection.topAnchor).isActive = true
-        reset.rightAnchor.constraint(equalTo: collection.rightAnchor).isActive = true
+        reset.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        reset.centerYAnchor.constraint(equalTo: choice.centerYAnchor).isActive = true
         reset.heightAnchor.constraint(equalTo: choice.heightAnchor).isActive = true
         reset.widthAnchor.constraint(equalTo: reset.heightAnchor).isActive = true
     }
@@ -81,10 +81,25 @@ class PuzzleView: UIView {
         /// Hierarchy 3 - Keep Choice.
         self.addSubview(choice)
         choiceConstraints()
+        choice.disappear()
         /// Hierarchy 4 - Restart.
         self.addSubview(reset)
         resetConstraints()
-        reset.backgroundColor = .gray
+        reset.disappear()
+        /// Start state
+        waitingForFirstChoice()
+    }
+    func waitingForFirstChoice() {
+        reset.fadeOut()
+        panel.subView.text = "Tap to choose a door"
+    }
+    func waitingForSecondChoice() {
+        choice.fadeIn()
+        panel.subView.text = "Do you want to keep your choice or switch to:"
+    }
+    func ended() {
+        choice.fadeOut()
+        reset.fadeIn()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -29,9 +29,11 @@ class PuzzleVC: BaseViewController {
         scene.collection.delegate = self
         scene.collection.dataSource = self
         /// Buttons Targets
-        scene.choice.switchChoice.addTarget(self, action: #selector(switchChoice), for: .touchUpInside)
-        scene.choice.keepChoice.addTarget(self, action: #selector(keepChoice), for: .touchUpInside)
-        scene.reset.addTarget(self, action: #selector(reset), for: .touchUpInside)
+        scene.choice.switchChoice.subView.addTarget(self, action: #selector(switchChoice),
+                                                    for: .touchUpInside)
+        scene.choice.keepChoice.subView.addTarget(self, action: #selector(keepChoice),
+                                                  for: .touchUpInside)
+        scene.reset.subView.addTarget(self, action: #selector(reset), for: .touchUpInside)
         /// First State
         GameInteractor.interactor.start()
     }
@@ -93,15 +95,20 @@ extension PuzzleVC: GameInteractorObserver {
         /// 2 - Waiting for second choice
         case (.madeFirstChoice(let id), .waitingForSecondChoice):
             montyHallProblem.firstChoice(id)
+            /// UI Update
+            scene.waitingForSecondChoice()
         /// 3 - Ended
         case (.madeSecondChoice(let choice), .ended):
             let didWin = montyHallProblem.secondChoice(choice)
-            scene.panel.end(didWin: didWin)
+            scene.panel.end(didWin: didWin, results: montyHallProblem.results)
             montyHallProblem.openAll()
+            /// UI Update
+            scene.ended()
         /// 4 - Reset
         case (.reset, .waitingForFirstChoice):
             montyHallProblem.reset()
-            scene.panel.reset()
+            /// UI Update
+            scene.waitingForFirstChoice()
         default:
             break
         }
