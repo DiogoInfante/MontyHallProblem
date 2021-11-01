@@ -7,7 +7,9 @@
 
 import UIKit
 
-/// Observer protocol
+/// Game Interactor Observer Protocol
+/// It should be able to change state caused by an event from a state to another
+/// Error event at a state
 protocol GameInteractorObserver {
     func changingStateFor(event: GameEvent,
                           from oldState: GameState,
@@ -19,18 +21,23 @@ protocol GameInteractorObserver {
 class GameInteractor {
     static let interactor = Interactor()
     class Interactor {
-        /// Current State
+        /// Current state of observed VC
         private(set) var currrentState: GameState = .idle
-        /// Set Observer
+        /// Current observed VC
         private var currentObserverVC: GameInteractorObserver? {
             UIApplication.getTopViewController() as? GameInteractorObserver
         }
+        /// Initializes a game interactor
         fileprivate init() { }
         /// State Change
+        /// Changes the state with an event to newState
+        /// - Parameters:
+        ///     - event: GameEvent
+        ///     - newState: GameState
         private func changeState(with event: GameEvent, to newState: GameState) {
-            guard let vc = currentObserverVC else { return }
+            guard let observedVC = currentObserverVC else { return }
             debugPrint("Event:", event, "State changed from:", currrentState, "to:", newState)
-            vc.changingStateFor(event: event, from: currrentState, to: newState)
+            observedVC.changingStateFor(event: event, from: currrentState, to: newState)
             currrentState = newState
         }
         /// 1 - Start from .waiting for first choice

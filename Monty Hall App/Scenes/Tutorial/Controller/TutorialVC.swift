@@ -7,11 +7,12 @@
 
 import UIKit
 
-/// Experiment
+/// Tutorial View Controller
+/// This page explains the solution to monty hall problem
 class TutorialVC: BaseViewController {
-    /// Home Scene/
+    /// Tutorial Scene
     var scene: TutorialView = TutorialView()
-    /// Initializes a HomeVC.
+    /// Initializes a TutorialVC.
     init() {
         super.init()
     }

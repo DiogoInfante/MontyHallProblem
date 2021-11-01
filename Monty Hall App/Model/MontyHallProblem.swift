@@ -37,6 +37,7 @@ class MontyHallProblem {
     }
     /// The contestor will select a door from the set
     /// - Parameters:
+    ///     - id: Given a id of the first choice
     func firstChoice(_ id: Int) {
         choosenDoor = doors[id]
         /// Monty will always open goats
@@ -53,6 +54,12 @@ class MontyHallProblem {
         }
     }
     /// The contestor decides to keep the first choice or switch to the other closed door
+    /// If the second choice is correct the player wins the game
+    /// On contrary the player looses
+    /// - Parameters:
+    ///     - secondChoice: .keepDoor or .switchDoor
+    /// - Returns:
+    ///     - A boolean indicating if the second choice was correct or not
     func secondChoice(_ secondChoice: SecondChoice) -> Bool {
         switch secondChoice {
         /// In case of keeping the first choice
@@ -81,7 +88,11 @@ class MontyHallProblem {
         }
     }
     /// Returns a random non prized door
-    func randomNonPrizedDoorSelection(_ doors: [Door])->Door {
+    /// - Parameters:
+    ///     - doors: list of all doors
+    /// - Returns:
+    ///     - Returns a random element form eligible doors
+    func randomNonPrizedDoorSelection(_ doors: [Door]) -> Door {
         /// Filter eligible doors
         let eligibleDoors = doors.filter { $0.isPrized != true }
         /// Returns a random element form eligible doors
@@ -97,15 +108,24 @@ class MontyHallProblem {
         /// Adds the prize to a random door
         addPrize()
     }
+    /// Get open door ids
+    /// - Returns:
+    ///     - Returns all open doors ids
     func getOpenIds() -> [Int] {
         let openDoors = self.doors.filter { $0.state == .opened}
         return openDoors.map { $0.id }
     }
+    /// Get switch door id
+    /// - Returns:
+    ///     - Returns the id of the option to switch door
     func getSwitchId() -> Int {
         let closedDoors = self.doors.filter { $0.state == .closed}
         let switchDoor = closedDoors.filter { $0.id != choosenDoor.id}
         return switchDoor.first?.id ?? -1
     }
+    /// Get choosen door id
+    /// - Returns:
+    ///     - Returns the first choice door id
     func getChoosenId() -> Int {
         return choosenDoor.id
     }

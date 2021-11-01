@@ -7,7 +7,9 @@
 
 import UIKit
 
+/// Experiment View
 class ExperimentView: UIView {
+    /// Initializes a experiment view
     init() {
         super.init(frame: .zero)
     }

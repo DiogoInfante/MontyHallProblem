@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// As Coinks has many assets this enum lists every asset used on the app
+/// As Monty Hall has many assets this enum lists every asset used on the app
 /// This enum is a string typed so the asset name is equal to the case
 /// There is a get static function to get a UIImage from the asset and handle nil case
 enum Asset: String {
@@ -32,10 +32,10 @@ enum Asset: String {
     case experiment
     case book
     /// Puzzle Scene
-    case choice
-    case playAgain
     case panel
     case stage
+    case choice
+    case playAgain
     case door
     case carDoor
     case goatDoor

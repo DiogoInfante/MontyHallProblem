@@ -7,11 +7,12 @@
 
 import UIKit
 
-/// Experiment
+/// Experiment View Controller
+/// On this page is possible to simulate multiple cases of monty hall problem
 class ExperimentVC: BaseViewController {
-    /// Home Scene/
+    /// Experiment Scene
     var scene: ExperimentView = ExperimentView()
-    /// Initializes a HomeVC.
+    /// Initializes a ExperimentVC.
     init() {
         super.init()
     }

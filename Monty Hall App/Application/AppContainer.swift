@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// App container factories procotols
 protocol HomeVCFactory {
     func makeHomeVC() -> HomeVC
 }
@@ -19,8 +20,10 @@ protocol ExperimentVCFactory {
 protocol TutorialVCFactory {
     func makeTutorialVC() -> TutorialVC
 }
+/// App container
 class AppContainer {
 }
+/// VCs creator functions
 extension AppContainer: HomeVCFactory {
     func makeHomeVC() -> HomeVC {
         return HomeVC(factory: self)
@@ -41,4 +44,3 @@ extension AppContainer: TutorialVCFactory {
         return TutorialVC()
     }
 }
-

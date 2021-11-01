@@ -8,6 +8,7 @@
 import Foundation
 
 /// Results
+/// A class that models multiple game results history
 class Results {
     private(set) var wins: Int = 0
     private(set) var rounds: Int = 0

@@ -13,7 +13,7 @@ class PuzzleVC: BaseViewController {
     let scene = PuzzleView()
     /// Monty Hall problem
     var montyHallProblem = MontyHallProblem(3)
-    /// Base View Controller init
+    /// Initializes a Puzzle View Controller
     init() {
         super.init()
     }
@@ -70,10 +70,12 @@ extension PuzzleVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return montyHallProblem.numberOfDoors
     }
     /// Collection view cell setup
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         /// Cell instance
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoorCollectionViewCell.identifier, for: indexPath) as? DoorCollectionViewCell
-        else { return  DoorCollectionViewCell() } 
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DoorCollectionViewCell.identifier,
+            for: indexPath) as? DoorCollectionViewCell else { return  DoorCollectionViewCell() }
         cell.door = montyHallProblem.doors[indexPath.item]
         /// Adds sobserver
         cell.door.observer = cell
@@ -100,7 +102,7 @@ extension PuzzleVC: GameInteractorObserver {
         /// 2 - Waiting for second choice
         case (.madeFirstChoice(let id), .waitingForSecondChoice):
             montyHallProblem.firstChoice(id)
-            scene.panel.secondChoice(openIds: montyHallProblem.getOpenIds(),
+            scene.panel.askForSecondChoice(openIds: montyHallProblem.getOpenIds(),
                                      chosendId: montyHallProblem.getChoosenId(),
                                      switchId: montyHallProblem.getSwitchId())
             /// UI Update
@@ -108,7 +110,7 @@ extension PuzzleVC: GameInteractorObserver {
         /// 3 - Ended
         case (.madeSecondChoice(let choice), .ended):
             let didWin = montyHallProblem.secondChoice(choice)
-            scene.panel.end(didWin: didWin, results: montyHallProblem.results)
+            scene.panel.displayResults(didWin: didWin, results: montyHallProblem.results)
             montyHallProblem.openAll()
             /// UI Update
             scene.ended()
@@ -125,4 +127,3 @@ extension PuzzleVC: GameInteractorObserver {
         ///
     }
 }
-

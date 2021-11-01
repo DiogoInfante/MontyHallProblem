@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Int Array Extensions
 extension Array where Element == Int {
     func increment(_ constant: Int) -> [Int] {
         return self.map { $0 + 1 }

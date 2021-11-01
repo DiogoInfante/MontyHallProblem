@@ -8,6 +8,8 @@
 import Foundation
 
 /// Oberserver Protocol
+/// stateUpdated: Sends a message of door state update
+/// prizeUpdated: Sends a message of prize state update
 protocol ObserverProtocol: AnyObject {
     func stateUpdated(_ newState: DoorState)
     func prizeUpdated(_ isPrized: Bool)
@@ -21,7 +23,7 @@ class Door {
     /// isPrized: Indicates if the door is prized
     private var _isPrized: Bool = false
     /// Update state notifying observer
-    var state : DoorState {
+    var state: DoorState {
         get {
             return _state
         }
@@ -31,7 +33,7 @@ class Door {
         }
     }
     /// Update prize notifying observer
-    var isPrized : Bool {
+    var isPrized: Bool {
         get {
             return _isPrized
         }

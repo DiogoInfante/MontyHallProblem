@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-// MARK: Door Collection View Cell
+/// Door Collection View Cell
 class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
     private var _door = Door(-1)
     /// Automatically deals with the door content

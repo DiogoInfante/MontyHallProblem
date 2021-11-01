@@ -10,7 +10,9 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var appContainer: AppContainer?
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo
+               session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         /// Window scene setup
         guard let windowScene = (scene as? UIWindowScene) else { return }
         /// Create app container
@@ -50,4 +52,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 }
-

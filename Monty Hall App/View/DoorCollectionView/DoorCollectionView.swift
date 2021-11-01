@@ -17,16 +17,16 @@ class DoorCollectionView: UICollectionView {
         self.backgroundColor = .clear
         self.collectionViewLayout = generateLayout()
         self.register(DoorCollectionViewCell.self, forCellWithReuseIdentifier: DoorCollectionViewCell.identifier)
-    } 
+    }
     /// Generates a door collection view layout
     /// - Returns: UICollectionViewLayout - According to specifications
     func generateLayout() -> UICollectionViewLayout {
-      /// 1 Item Size
+      /// 1 - Item Size
       let itemSize = NSCollectionLayoutSize(
         widthDimension: .fractionalWidth(1.0),
         heightDimension: .fractionalHeight(1.0))
       let fullItem = NSCollectionLayoutItem(layoutSize: itemSize)
-      /// 2 Group Size
+      /// 2 - Group Size
       let groupSize = NSCollectionLayoutSize(
         widthDimension: .fractionalWidth(1.0),
         heightDimension: .fractionalWidth(2/3))
@@ -34,7 +34,7 @@ class DoorCollectionView: UICollectionView {
         layoutSize: groupSize,
         subitem: fullItem,
         count: 3)
-      ///3 Collection Layout
+      /// 3 - Collection Layout
       let section = NSCollectionLayoutSection(group: group)
       let layout = UICollectionViewCompositionalLayout(section: section)
       /// Layout
@@ -45,4 +45,3 @@ class DoorCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

@@ -7,19 +7,19 @@
 
 import UIKit
 
-/// Puzzle View
+/// Home View
 class HomeView: UIView {
-    /// Door collection view
+    /// Banner with app title
     let banner = AssetView(.banner)
-    /// Keep choice button
+    /// Seleciton Menu
     let menu = MenuView()
-    /// Result label
+    /// Goat image
     let goat = AssetView(.goat)
-    /// Reset
+    /// Car image
     let car = AssetView(.car)
     /// Vertical spacing
     let space = UIScreen.main.bounds.height*0.03
-    /// Initializes a Puzzle View
+    /// Initializes a Home View
     init() {
         super.init(frame: .zero)
         setupUI()

@@ -8,13 +8,18 @@
 import UIKit
 
 /// HomeVC is the first page of the app.
+/// It contains a menu to navigate in between pages
+/// Also has the tiltle and some images
 class HomeVC: BaseViewController {
     /// Available factories.
     typealias Factory = PuzzleVCFactory & ExperimentVCFactory & TutorialVCFactory
     let factory: Factory
-    /// Home Scene/
+    /// Home Scene
     var scene: HomeView = HomeView()
-    /// Selection index
+    /// Selection index:
+    ///     - 0: Puzzle
+    ///     - 1: Experiment
+    ///     - 2: Tutorial
     var selectionId: Int = 0
     /// Initializes a HomeVC.
     init(factory: Factory) {
@@ -31,30 +36,39 @@ class HomeVC: BaseViewController {
         /// Scene constraints: To allow scene width reach the border
         sceneConstraints()
         /// Button Targets
-        scene.menu.button.subView.addTarget(self, action: #selector(tappedPlay), for: .touchUpInside)
-        scene.menu.nextItem.subView.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
-        scene.menu.lastItem.subView.addTarget(self, action: #selector(tappedLast), for: .touchUpInside)
+        scene.menu.button.subView.addTarget(self, action: #selector(tappedNavagation), for: .touchUpInside)
+        scene.menu.nextArrow.subView.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
+        scene.menu.backArrow.subView.addTarget(self, action: #selector(tappedLast), for: .touchUpInside)
     }
-    @objc func tappedPlay() {
+    /// Called when menu button is pressed
+    /// It pushes to the view controller refered to selection id
+    @objc func tappedNavagation() {
         if selectionId == 0 {
             let puzzleVC = factory.makePuzzleVC()
             self.navigationController?.pushViewController(puzzleVC, animated: true)
         } else if selectionId == 1 {
-            let experimentVC = factory.makeExperimentVC()
-            self.navigationController?.pushViewController(experimentVC, animated: true)
+            /// let experimentVC = factory.makeExperimentVC()
+            /// self.navigationController?.pushViewController(experimentVC, animated: true)
         } else {
-            let tutorialVC = factory.makeTutorialVC()
-            self.navigationController?.pushViewController(tutorialVC, animated: true)
+            /// let tutorialVC = factory.makeTutorialVC()
+            /// self.navigationController?.pushViewController(tutorialVC, animated: true)
         }
     }
+    /// Tapped Next arrow
     @objc func tappedNext() {
-        selectionId += 1
-        scene.menu.didSelect(selectionId)
+        if selectionId < 2 {
+            selectionId += 1
+            scene.menu.didSelect(selectionId)
+        }
     }
+    /// Tapped Last arrow
     @objc func tappedLast() {
-        selectionId -= 1
-        scene.menu.didSelect(selectionId)
+        if selectionId > 0 {
+            selectionId -= 1
+            scene.menu.didSelect(selectionId)
+        }
     }
+    /// Add scene constraints to allow width constrained to view
     fileprivate func sceneConstraints() {
         scene.translatesAutoresizingMaskIntoConstraints = false
         scene.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true

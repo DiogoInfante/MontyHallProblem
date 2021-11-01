@@ -6,7 +6,6 @@
 //
 
 import UIKit
-    
 // MARK: General Extensions
 extension UIView {
     /// Calculates the distance from the center of the view to a point.
@@ -27,7 +26,7 @@ extension UIView {
     /// - Parameter angle: angle in degrees
     func rotate(angle: CGFloat) {
         let radians = angle / 180.0 * CGFloat.pi
-        let rotation = self.transform.rotated(by: radians);
+        let rotation = self.transform.rotated(by: radians)
         self.transform = rotation
     }
 }
@@ -73,20 +72,17 @@ extension UIView {
                 repeatCount: Float = 5,
                 effect: AnimationOptions = .curveEaseIn,
                 completion:@escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
-                
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: effect,
                        animations: {
                         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-                        
                         rotateAnimation.fromValue = fromValue
                         rotateAnimation.toValue = toValue
                         rotateAnimation.isRemovedOnCompletion = true
                         rotateAnimation.duration = duration
                         rotateAnimation.repeatCount = repeatCount
                         self.layer.add(rotateAnimation, forKey: nil)
-                        
                        }, completion: completion)
     }
     /// Fade In
@@ -98,14 +94,11 @@ extension UIView {
                 delay: TimeInterval = 0.0,
                 effect: AnimationOptions = .curveEaseIn,
                 completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
-        
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: effect,
                        animations: {
-                        
                         self.alpha = 1.0
-                        
                        }, completion: completion)
     }
     /// Fade Out
@@ -117,14 +110,11 @@ extension UIView {
                  delay: TimeInterval = 0.0,
                  effect: AnimationOptions = .curveEaseIn,
                  completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
-        
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: effect,
                        animations: {
-                        
-                        self.alpha = 0.0
-                        
+                       self.alpha = 0.0
                        }, completion: completion)
     }
     /// Fades to a custom opacity
@@ -138,14 +128,11 @@ extension UIView {
                     effect: AnimationOptions = .curveEaseIn,
                     toAlpha: CGFloat,
                     completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
-        
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: effect,
                        animations: {
-
                         self.alpha = toAlpha
-                        
                        }, completion: completion)
     }
     /// Appear
@@ -159,9 +146,7 @@ extension UIView {
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-                        
                         self.alpha = 1.0
-                        
                        }, completion: completion)
     }
     /// Disappear
@@ -175,9 +160,7 @@ extension UIView {
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-                        
                         self.alpha = 0.0
-                        
                        }, completion: completion)
     }
     /// Spring Animation
@@ -195,27 +178,21 @@ extension UIView {
                          scale: CGFloat = 0.9,
                          effect: AnimationOptions = .curveEaseIn,
                          completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
-        
         UIView.animate(withDuration: duration,
                        delay: delay,
                        usingSpringWithDamping: damping,
                        initialSpringVelocity: initialVelocity,
                        options: effect, animations: {
-                        
-                        // Scales
+                        /// Scales
                         self.transform = CGAffineTransform(scaleX: scale, y: scale)
-                        
                        }) { (_) in
-            
             UIView.animate(withDuration: duration,
                            delay: delay,
                            usingSpringWithDamping: damping,
                            initialSpringVelocity: initialVelocity,
                            options: effect, animations: {
-                            
-                            // Returns to main Size
+                            /// Returns to main Size
                             self.transform = CGAffineTransform(scaleX: 1, y: 1)
-                            
                            }, completion: completion)
         }
     }
@@ -225,20 +202,17 @@ extension UIView {
     ///     - delay: Time delay before it start.
     ///     - centerTo: Desired point to translate center to
     func translation(duration: TimeInterval = 1,
-                   delay: TimeInterval = 0.0,
-                   centerTo: CGPoint,
-                   completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+                     delay: TimeInterval = 0.0,
+                     centerTo: CGPoint,
+                     completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-                        
-                        // Distance from center to point
+                        /// Distance from center to point
                         let distance = self.centerTo(point: centerTo)
-
-                        // Translation delta
+                        /// Translation delta
                         self.transform = CGAffineTransform(translationX: distance.x, y: distance.y)
-
                        }, completion: completion)
     }
     /// Translates the View Origin to a Desired Point
@@ -247,18 +221,16 @@ extension UIView {
     ///     - delay: Time delay before it start.
     ///     - originTo: Desired point to translate origin to
     func translation(duration: TimeInterval = 1,
-                   delay: TimeInterval = 0.0,
-                   originTo: CGPoint,
-                   completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+                     delay: TimeInterval = 0.0,
+                     originTo: CGPoint,
+                     completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-                    
-                        // Distance from origin to point
+                        /// Distance from origin to point
                         let distance = self.originTo(point: originTo)
-                        
-                        // Translation delta
+                        /// Translation delta
                         self.transform = CGAffineTransform(translationX: distance.x, y: distance.y + self.frame.height)
 
                        }, completion: completion)
@@ -269,17 +241,15 @@ extension UIView {
     ///     - delay: Time delay before it start.
     ///     - delta: Desired delta to translate in each direction
     func translation(duration: TimeInterval = 1,
-                   delay: TimeInterval = 0.0,
-                   delta: CGPoint,
-                   completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+                     delay: TimeInterval = 0.0,
+                     delta: CGPoint,
+                     completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-
                         // Translation by a delta
                         self.transform = CGAffineTransform(translationX: delta.x, y: delta.y)
-
                        }, completion: completion)
     }
     /// Scales the View by a Factor
@@ -289,18 +259,16 @@ extension UIView {
     ///     - scaleX: Scale faction in X direction
     ///     - scaleY: Scale faction in Y direction
     func scaleBy(duration: TimeInterval = 1,
-                   delay: TimeInterval = 0.0,
-                   scaleX: CGFloat = 1,
-                   scaleY: CGFloat = 1,
-                   completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+                 delay: TimeInterval = 0.0,
+                 scaleX: CGFloat = 1,
+                 scaleY: CGFloat = 1,
+                 completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-
-                        //  Scale by
+                        ///  Scale by
                         self.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
-
                        }, completion: completion)
     }
     /// Returns view to it's initial state
@@ -308,16 +276,14 @@ extension UIView {
     ///     - duration: Animation duration
     ///     - delay: Time delay before it start.
     func identity(duration: TimeInterval = 1,
-                   delay: TimeInterval = 0.0,
-                   completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+                  delay: TimeInterval = 0.0,
+                  completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
-
-                        // Reset to identity
+                        /// Reset to identity
                         self.transform = CGAffineTransform.identity
-
                        }, completion: completion)
     }
 }

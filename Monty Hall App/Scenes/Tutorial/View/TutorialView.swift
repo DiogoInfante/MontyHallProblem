@@ -7,7 +7,9 @@
 
 import UIKit
 
+/// Tutorial View
 class TutorialView: UIView {
+    /// Initializes a Tutorial View
     init() {
         super.init(frame: .zero)
     }
