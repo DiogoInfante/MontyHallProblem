@@ -11,9 +11,9 @@ import UIKit
 /// Contais keep and swith buttons
 class ChoiceView: UIView {
     /// Keep choice button
-    let keepChoice = AssetView(.yes, subView: UIButton())
+    let keepChoice = AssetView(.choice, subView: UIButton())
     /// Switch choice button
-    let switchChoice = AssetView(.no, subView: UIButton())
+    let switchChoice = AssetView(.choice, subView: UIButton())
     init() {
         super.init(frame: .zero)
         setupUI()
@@ -39,9 +39,13 @@ class ChoiceView: UIView {
         /// Hierarchy 1 - Keep Choice.
         self.addSubview(keepChoice)
         keepChoiceConstraints()
+        keepChoice.subView.setTitle("Keep", for: .normal)
+        keepChoice.subView.setTitleColor(.black, for: .normal)
         /// Hierarchy 2 - Switch Choice.
         self.addSubview(switchChoice)
         switchChoiceConstraints()
+        switchChoice.subView.setTitle("Switch", for: .normal)
+        switchChoice.subView.setTitleColor(.black, for: .normal)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

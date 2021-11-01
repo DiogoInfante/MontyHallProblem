@@ -17,20 +17,21 @@ enum Asset: String {
     /// Backgrounds
     case background
     case smoothBackground
+    /// Main
     case goat
     case car
+    /// Others
+    case yes
+    case no
     // MARK: - Scenes
     /// Home Scene
     case banner
     case play
     case experiment
     /// Puzzle Scene
-    case yes
-    case no
     case back
+    case choice
     case playAgain
-    case keepDoor
-    case switchDoor
     case panel
     case stage
     case door

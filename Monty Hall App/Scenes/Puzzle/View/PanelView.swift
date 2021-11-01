@@ -15,11 +15,12 @@ class PanelView: AssetView<UILabel> {
         self.subView.numberOfLines = 2
     }
     func secondChoice(openIds: [Int], chosendId: Int, switchId: Int) {
-        var stringDoor = "doors has goats"
+        var string = "doors has goats"
         if openIds.count == 1 {
-            stringDoor = "door has a goat"
+            string = "door has a goat"
         }
-        self.subView.text = "\(openIds) \(stringDoor)\nKeep \(chosendId) or switch to \(switchId)?"
+        let openString = openIds.increment(1).getString()
+        self.subView.text = "\(openString) \(string)\nKeep on \(chosendId+1) or switch to \(switchId+1)?"
     }
     /// Set label layout
     /// - Parameters:
