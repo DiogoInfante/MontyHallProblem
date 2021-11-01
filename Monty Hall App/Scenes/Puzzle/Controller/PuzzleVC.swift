@@ -19,14 +19,15 @@ class PuzzleVC: BaseViewController {
     }
     /// VIew did load cycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         /// Background
         self.myView.update(.puzzleBackground)
         /// Scene construction
         view.addSubview(scene)
         scene.setScene(root: view)
         /// Collection View Methods
-        scene.collectionView.delegate = self
-        scene.collectionView.dataSource = self
+        scene.collection.delegate = self
+        scene.collection.dataSource = self
         /// Buttons Targets
         scene.choice.switchChoice.addTarget(self, action: #selector(switchChoice), for: .touchUpInside)
         scene.choice.keepChoice.addTarget(self, action: #selector(keepChoice), for: .touchUpInside)
@@ -92,18 +93,15 @@ extension PuzzleVC: GameInteractorObserver {
         /// 2 - Waiting for second choice
         case (.madeFirstChoice(let id), .waitingForSecondChoice):
             montyHallProblem.firstChoice(id)
-            scene.result.disappear()
         /// 3 - Ended
         case (.madeSecondChoice(let choice), .ended):
-            scene.result.appear()
             let didWin = montyHallProblem.secondChoice(choice)
-            scene.result.end(didWin: didWin)
+            scene.panel.end(didWin: didWin)
             montyHallProblem.openAll()
         /// 4 - Reset
         case (.reset, .waitingForFirstChoice):
-            scene.result.reset()
             montyHallProblem.reset()
-            scene.result.reset()
+            scene.panel.reset()
         default:
             break
         }

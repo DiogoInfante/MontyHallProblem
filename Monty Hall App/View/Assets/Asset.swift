@@ -24,6 +24,7 @@ enum Asset: String {
     case play
     case experiment
     /// Puzzle Scene
+    case panel
     case puzzleBackground
     case door
     case carDoor

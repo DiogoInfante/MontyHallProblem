@@ -7,23 +7,27 @@
 
 import UIKit
 
-class ResultLabel: UILabel {
+class Panel: AssetView<UILabel> {
+    init(_ asset: Asset = .panel) {
+        super.init(asset, subView: UILabel())
+    }
     /// Set label layout
     /// - Parameters:
     ///     - didWin: Indicates if player won the prize
+    
     func end(didWin: Bool) {
         if didWin {
-            self.text = "Win!"
-            self.backgroundColor = .green
+            self.subView.text = "Win!"
         }
         else {
-            self.text = "Lost"
-            self.backgroundColor = .systemRed
+            self.subView.text = "Lost"
         }
     }
     /// Resets label to initial state
     func reset() {
-        self.text = "First Choice"
-        self.backgroundColor = .yellow
+        self.subView.text = "First Choice"
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
