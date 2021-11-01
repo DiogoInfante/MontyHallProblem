@@ -21,7 +21,7 @@ class PuzzleVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /// Background
-        self.myView.update(.puzzleBackground)
+        self.myView.update(.smoothBackground)
         /// Scene construction
         view.addSubview(scene)
         scene.setScene(root: view)

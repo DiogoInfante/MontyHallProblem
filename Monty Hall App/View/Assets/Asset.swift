@@ -16,6 +16,7 @@ enum Asset: String {
     // MARK: - Common
     /// Backgrounds
     case background
+    case smoothBackground
     case goat
     case car
     // MARK: - Scenes
@@ -25,7 +26,7 @@ enum Asset: String {
     case experiment
     /// Puzzle Scene
     case panel
-    case puzzleBackground
+    case stage
     case door
     case carDoor
     case goatDoor
