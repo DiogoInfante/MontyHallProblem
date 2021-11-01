@@ -8,8 +8,8 @@
 import UIKit
 
 /// HomeVC is the first page of the app.
-/// It contains a menu to navigate in between pages
-/// Also has the tiltle and some images
+/// It contains a menu to navigate in between pages.
+/// Also has the tiltle and some images.
 class HomeVC: BaseViewController {
     /// Available factories.
     typealias Factory = PuzzleVCFactory & ExperimentVCFactory & TutorialVCFactory
