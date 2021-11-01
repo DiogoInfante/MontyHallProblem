@@ -27,6 +27,7 @@ enum Asset: String {
     /// Puzzle Scene
     case yes
     case no
+    case back
     case playAgain
     case keepDoor
     case switchDoor

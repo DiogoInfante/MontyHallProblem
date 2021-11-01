@@ -12,13 +12,13 @@ class MontyHallProblem {
     /// number Of Doors
     let numberOfDoors: Int
     /// List of doors
-    var doors: [Door] = []
+    private(set) var doors: [Door] = []
     /// Prized door
-    var prizeDoor: Door = .null
+    private(set) var prizeDoor: Door = .null
     /// Fist choice
-    var choosenDoor: Door = .null
+    private(set) var choosenDoor: Door = .null
     /// Results
-    var results = Results()
+    private(set) var results = Results()
     /// Initializes a Monty Hall Problem
     init(_ numberOfDoors: Int) {
         self.numberOfDoors = numberOfDoors
@@ -96,5 +96,17 @@ class MontyHallProblem {
         }
         /// Adds the prize to a random door
         addPrize()
+    }
+    func getOpenIds()->[Int] {
+        let openDoors = self.doors.filter { $0.state == .opened}
+        return openDoors.map { $0.id }
+    }
+    func getSwitchId()->Int {
+        let closedDoors = self.doors.filter { $0.state == .closed}
+        let switchDoor = closedDoors.filter { $0.id != choosenDoor.id}
+        return switchDoor.first?.id ?? -1
+    }
+    func getChoosenId()->Int {
+        return choosenDoor.id
     }
 }

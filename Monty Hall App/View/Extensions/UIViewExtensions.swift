@@ -23,6 +23,13 @@ extension UIView {
     func originTo(point: CGPoint) -> CGPoint {
         return CGPoint(x: point.x - self.frame.origin.x, y: point.y - self.frame.origin.y)
     }
+    /// Rotate a view by specified degrees
+    /// - Parameter angle: angle in degrees
+    func rotate(angle: CGFloat) {
+        let radians = angle / 180.0 * CGFloat.pi
+        let rotation = self.transform.rotated(by: radians);
+        self.transform = rotation
+    }
 }
 // MARK: Constraints Extensions
 extension UIView {

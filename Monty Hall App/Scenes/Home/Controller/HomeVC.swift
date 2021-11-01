@@ -27,12 +27,21 @@ class HomeVC: BaseViewController {
         self.myView.update(.background)
         /// Scene construction.
         view.addSubview(scene)
-        scene.setScene(root: view)
+        /// Scene constraints: To allow scene width reach the border
+        sceneConstraints()
+        /// Button Targets
         scene.menu.subView.addTarget(self, action: #selector(tappedPlay), for: .touchUpInside)
     }
     @objc func tappedPlay() {
         let puzzleVC = factory.makePuzzleVC()
         self.navigationController?.pushViewController(puzzleVC, animated: true)
+    }
+    fileprivate func sceneConstraints() {
+        scene.translatesAutoresizingMaskIntoConstraints = false
+        scene.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        scene.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        scene.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scene.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -34,6 +34,7 @@ class PuzzleVC: BaseViewController {
         scene.choice.keepChoice.subView.addTarget(self, action: #selector(keepChoice),
                                                   for: .touchUpInside)
         scene.reset.subView.addTarget(self, action: #selector(reset), for: .touchUpInside)
+        scene.back.subView.addTarget(self, action: #selector(back), for: .touchUpInside)
         /// First State
         GameInteractor.interactor.start()
     }
@@ -54,6 +55,9 @@ class PuzzleVC: BaseViewController {
         if GameInteractor.interactor.currrentState == .ended {
             GameInteractor.interactor.reset()
         }
+    }
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -95,6 +99,9 @@ extension PuzzleVC: GameInteractorObserver {
         /// 2 - Waiting for second choice
         case (.madeFirstChoice(let id), .waitingForSecondChoice):
             montyHallProblem.firstChoice(id)
+            scene.panel.secondChoice(openIds: montyHallProblem.getOpenIds(),
+                                     chosendId: montyHallProblem.getChoosenId(),
+                                     switchId: montyHallProblem.getSwitchId())
             /// UI Update
             scene.waitingForSecondChoice()
         /// 3 - Ended

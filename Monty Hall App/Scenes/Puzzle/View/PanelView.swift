@@ -14,6 +14,13 @@ class PanelView: AssetView<UILabel> {
         self.subView.textColor = .yellow
         self.subView.numberOfLines = 2
     }
+    func secondChoice(openIds: [Int], chosendId: Int, switchId: Int) {
+        var stringDoor = "doors has goats"
+        if openIds.count == 1 {
+            stringDoor = "door has a goat"
+        }
+        self.subView.text = "\(openIds) \(stringDoor)\nKeep \(chosendId) or switch to \(switchId)?"
+    }
     /// Set label layout
     /// - Parameters:
     ///     - didWin: Indicates if player won the prize

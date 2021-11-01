@@ -19,6 +19,8 @@ class PuzzleView: UIView {
     let stage = AssetView(.stage)
     /// Reset
     let reset = AssetView(.playAgain, subView: UIButton())
+    /// Back
+    let back = AssetView(.back, subView: UIButton())
     /// Vertical spacing constant
     let space = UIScreen.main.bounds.height*0.03
     /// Initializes a Puzzle View
@@ -67,6 +69,14 @@ class PuzzleView: UIView {
         reset.heightAnchor.constraint(equalTo: choice.heightAnchor).isActive = true
         reset.widthAnchor.constraint(equalTo: reset.heightAnchor).isActive = true
     }
+    /// Adds constraints to back - Hierarchy 6.
+    fileprivate func backConstraints() {
+        back.translatesAutoresizingMaskIntoConstraints = false
+        back.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        back.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        back.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.05).isActive = true
+        back.widthAnchor.constraint(equalTo: back.heightAnchor).isActive = true
+    }
     /// Setups UI
     func setupUI() {
         /// Hierarchy 1 - Collection View.
@@ -86,6 +96,9 @@ class PuzzleView: UIView {
         self.addSubview(reset)
         resetConstraints()
         reset.disappear()
+        /// Hierarquy 6 - Back.
+        self.addSubview(back)
+        backConstraints()
         /// Start state
         waitingForFirstChoice()
     }
@@ -97,7 +110,6 @@ class PuzzleView: UIView {
     /// Waiting For First Second UI Updates
     func waitingForSecondChoice() {
         choice.fadeIn()
-        panel.subView.text = "Do you want to keep your choice or switch to:"
     }
     /// Ended UI Updates
     func ended() {
