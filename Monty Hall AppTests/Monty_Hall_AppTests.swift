@@ -8,7 +8,7 @@
 import XCTest
 @testable import Monty_Hall_App
 
-class Monty_Hall_AppTests: XCTestCase {
+class MontyHallAppTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

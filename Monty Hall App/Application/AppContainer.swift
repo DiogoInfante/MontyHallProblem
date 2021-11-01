@@ -13,6 +13,12 @@ protocol HomeVCFactory {
 protocol PuzzleVCFactory {
     func makePuzzleVC() -> PuzzleVC
 }
+protocol ExperimentVCFactory {
+    func makeExperimentVC() -> ExperimentVC
+}
+protocol TutorialVCFactory {
+    func makeTutorialVC() -> TutorialVC
+}
 class AppContainer {
 }
 extension AppContainer: HomeVCFactory {
@@ -23,6 +29,16 @@ extension AppContainer: HomeVCFactory {
 extension AppContainer: PuzzleVCFactory {
     func makePuzzleVC() -> PuzzleVC {
         return PuzzleVC()
+    }
+}
+extension AppContainer: ExperimentVCFactory {
+    func makeExperimentVC() -> ExperimentVC {
+        return ExperimentVC()
+    }
+}
+extension AppContainer: TutorialVCFactory {
+    func makeTutorialVC() -> TutorialVC {
+        return TutorialVC()
     }
 }
 

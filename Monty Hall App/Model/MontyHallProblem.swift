@@ -23,8 +23,8 @@ class MontyHallProblem {
     init(_ numberOfDoors: Int) {
         self.numberOfDoors = numberOfDoors
         /// Populate door array
-        for i in 0...numberOfDoors-1 {
-            doors.append(Door(i))
+        for index in 0...numberOfDoors-1 {
+            doors.append(Door(index))
         }
         /// Adds a prize to a random door
         addPrize()
@@ -76,8 +76,8 @@ class MontyHallProblem {
     }
     /// Reveals Prize: Open all doors
     func openAll() {
-        for i in 0...numberOfDoors-1 {
-            doors[i].state = .opened
+        for index in 0...numberOfDoors-1 {
+            doors[index].state = .opened
         }
     }
     /// Returns a random non prized door
@@ -90,23 +90,23 @@ class MontyHallProblem {
     /// Resets the interaction
     func reset() {
         /// Close all doors and removes the prize
-        for i in 0...numberOfDoors-1 {
-            doors[i].state = .closed
-            doors[i].isPrized = false
+        for index in 0...numberOfDoors-1 {
+            doors[index].state = .closed
+            doors[index].isPrized = false
         }
         /// Adds the prize to a random door
         addPrize()
     }
-    func getOpenIds()->[Int] {
+    func getOpenIds() -> [Int] {
         let openDoors = self.doors.filter { $0.state == .opened}
         return openDoors.map { $0.id }
     }
-    func getSwitchId()->Int {
+    func getSwitchId() -> Int {
         let closedDoors = self.doors.filter { $0.state == .closed}
         let switchDoor = closedDoors.filter { $0.id != choosenDoor.id}
         return switchDoor.first?.id ?? -1
     }
-    func getChoosenId()->Int {
+    func getChoosenId() -> Int {
         return choosenDoor.id
     }
 }

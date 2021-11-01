@@ -10,11 +10,12 @@ import UIKit
 /// HomeVC is the first page of the app.
 class HomeVC: BaseViewController {
     /// Available factories.
-    typealias Factory = PuzzleVCFactory
+    typealias Factory = PuzzleVCFactory & ExperimentVCFactory & TutorialVCFactory
     let factory: Factory
     /// Home Scene/
     var scene: HomeView = HomeView()
-
+    /// Selection index
+    var selectionId: Int = 0
     /// Initializes a HomeVC.
     init(factory: Factory) {
         self.factory = factory
@@ -30,11 +31,29 @@ class HomeVC: BaseViewController {
         /// Scene constraints: To allow scene width reach the border
         sceneConstraints()
         /// Button Targets
-        scene.menu.subView.addTarget(self, action: #selector(tappedPlay), for: .touchUpInside)
+        scene.menu.button.subView.addTarget(self, action: #selector(tappedPlay), for: .touchUpInside)
+        scene.menu.nextItem.subView.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
+        scene.menu.lastItem.subView.addTarget(self, action: #selector(tappedLast), for: .touchUpInside)
     }
     @objc func tappedPlay() {
-        let puzzleVC = factory.makePuzzleVC()
-        self.navigationController?.pushViewController(puzzleVC, animated: true)
+        if selectionId == 0 {
+            let puzzleVC = factory.makePuzzleVC()
+            self.navigationController?.pushViewController(puzzleVC, animated: true)
+        } else if selectionId == 1 {
+            let experimentVC = factory.makeExperimentVC()
+            self.navigationController?.pushViewController(experimentVC, animated: true)
+        } else {
+            let tutorialVC = factory.makeTutorialVC()
+            self.navigationController?.pushViewController(tutorialVC, animated: true)
+        }
+    }
+    @objc func tappedNext() {
+        selectionId += 1
+        scene.menu.didSelect(selectionId)
+    }
+    @objc func tappedLast() {
+        selectionId -= 1
+        scene.menu.didSelect(selectionId)
     }
     fileprivate func sceneConstraints() {
         scene.translatesAutoresizingMaskIntoConstraints = false

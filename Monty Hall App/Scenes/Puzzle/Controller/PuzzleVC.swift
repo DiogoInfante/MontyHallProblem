@@ -72,7 +72,8 @@ extension PuzzleVC: UICollectionViewDelegate, UICollectionViewDataSource {
     /// Collection view cell setup
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         /// Cell instance
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoorCollectionViewCell.identifier, for: indexPath) as! DoorCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoorCollectionViewCell.identifier, for: indexPath) as? DoorCollectionViewCell
+        else { return  DoorCollectionViewCell() } 
         cell.door = montyHallProblem.doors[indexPath.item]
         /// Adds sobserver
         cell.door.observer = cell

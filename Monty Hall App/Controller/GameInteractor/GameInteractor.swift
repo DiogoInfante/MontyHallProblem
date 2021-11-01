@@ -25,7 +25,7 @@ class GameInteractor {
         private var currentObserverVC: GameInteractorObserver? {
             UIApplication.getTopViewController() as? GameInteractorObserver
         }
-        fileprivate init(){}
+        fileprivate init() { }
         /// State Change
         private func changeState(with event: GameEvent, to newState: GameState) {
             guard let vc = currentObserverVC else { return }
@@ -33,7 +33,7 @@ class GameInteractor {
             vc.changingStateFor(event: event, from: currrentState, to: newState)
             currrentState = newState
         }
-        /// 1 - Start from .idle
+        /// 1 - Start from .waiting for first choice
         func start() {
             changeState(with: .start, to: .waitingForFirstChoice)
         }

@@ -12,7 +12,7 @@ class HomeView: UIView {
     /// Door collection view
     let banner = AssetView(.banner)
     /// Keep choice button
-    let menu = AssetView(.play, subView: UIButton())
+    let menu = MenuView()
     /// Result label
     let goat = AssetView(.goat)
     /// Reset
@@ -29,8 +29,8 @@ class HomeView: UIView {
         menu.translatesAutoresizingMaskIntoConstraints = false
         menu.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         menu.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        menu.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3).isActive = true
-        menu.widthAnchor.constraint(equalTo: menu.heightAnchor).isActive = true
+        menu.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45).isActive = true
+        menu.widthAnchor.constraint(equalTo: menu.heightAnchor, multiplier: 1.47).isActive = true
 
     }
     /// Adds constraints to banner - Hierarchy 2.
@@ -79,4 +79,3 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

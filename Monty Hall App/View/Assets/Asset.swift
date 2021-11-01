@@ -21,6 +21,8 @@ enum Asset: String {
     case goat
     case car
     /// Others
+    case next
+    case back
     case yes
     case no
     // MARK: - Scenes
@@ -28,8 +30,8 @@ enum Asset: String {
     case banner
     case play
     case experiment
+    case book
     /// Puzzle Scene
-    case back
     case choice
     case playAgain
     case panel
