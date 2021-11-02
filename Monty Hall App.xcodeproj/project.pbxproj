@@ -236,6 +236,7 @@
 				4D36F41925DCA3AD00870ADE /* View */,
 				4D36F41B25DCA3BA00870ADE /* Controller */,
 				4D36F41825DCA3A900870ADE /* Model */,
+				4D45AA04273196D100E87BBB /* Fonts */,
 				4D36F3EB25DCA39900870ADE /* Main.storyboard */,
 				4D36F3EE25DCA39B00870ADE /* Assets.xcassets */,
 				4D36F3F025DCA39B00870ADE /* LaunchScreen.storyboard */,
@@ -301,6 +302,13 @@
 				4D36F42F25DCA7B900870ADE /* DoorCollectionViewCell.swift */,
 			);
 			path = DoorCollectionView;
+			sourceTree = "<group>";
+		};
+		4D45AA04273196D100E87BBB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4D8B9BA9272F4A0F0005B33C /* Puzzle */ = {

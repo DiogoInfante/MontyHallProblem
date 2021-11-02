@@ -113,7 +113,7 @@ extension PuzzleVC: GameInteractorObserver {
             scene.panel.displayResults(didWin: didWin, results: montyHallProblem.results)
             montyHallProblem.openAll()
             /// UI Update
-            scene.ended()
+            scene.ended(choice)
         /// 4 - Reset
         case (.reset, .waitingForFirstChoice):
             montyHallProblem.reset()

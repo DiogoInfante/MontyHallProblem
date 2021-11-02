@@ -171,9 +171,9 @@ extension UIView {
     ///     - initialVelocity: Inicial velocity of animation
     ///     - scale: Scaling ration
     ///     - effect: Type of animation effect
-    func springAnimation(duration: TimeInterval = 0.01,
+    func springAnimation(duration: TimeInterval = 0.2,
                          delay: TimeInterval = 0.0,
-                         damping: CGFloat = 0.2,
+                         damping: CGFloat = 0.5,
                          initialVelocity: CGFloat = 0,
                          scale: CGFloat = 0.9,
                          effect: AnimationOptions = .curveEaseIn,

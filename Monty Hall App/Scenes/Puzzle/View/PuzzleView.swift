@@ -104,17 +104,35 @@ class PuzzleView: UIView {
     }
     /// Waiting For First Choice UI Updates
     func waitingForFirstChoice() {
-        reset.fadeOut()
+        reset.springAnimation { result in
+            if result {
+                self.reset.fadeOut(delay: 0.5)
+            }
+        }
         panel.subView.text = "Tap to choose a door"
     }
-    /// Waiting For First Second UI Updates
+    /// Waiting For Second Second UI Updates
     func waitingForSecondChoice() {
         choice.fadeIn()
     }
     /// Ended UI Updates
-    func ended() {
-        choice.fadeOut()
-        reset.fadeIn()
+    func ended(_ secondChoice: SecondChoice) {
+        switch secondChoice {
+        case .keepDoor:
+            choice.keepChoice.springAnimation { result in
+                if result {
+                    self.choice.fadeOut()
+                    self.reset.fadeIn(delay: 0.5)
+                }
+            }
+        case .switchDoor:
+            choice.switchChoice.springAnimation { result in
+                if result {
+                    self.choice.fadeOut()
+                    self.reset.fadeIn(delay: 0.5)
+                }
+            }
+        }
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
