@@ -20,6 +20,10 @@ enum Asset: String {
     /// Main
     case goat
     case car
+    /// Top Bar
+    case discoOn
+    case discoOff
+    case pop
     /// Others
     case next
     case back

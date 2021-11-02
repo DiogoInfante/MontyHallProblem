@@ -18,4 +18,5 @@ extension UIColor {
     static var mGray: UIColor  { return UIColor(r: 94, g: 94, b: 94) }
     static var mDarkGray: UIColor  { return UIColor(r: 33, g: 33, b: 33) }
     static var mIce: UIColor  { return UIColor(r: 242, g: 237, b: 228) }
+    static var mPallete1: UIColor { return UIColor(r: 248, g: 214, b: 151) }
 }

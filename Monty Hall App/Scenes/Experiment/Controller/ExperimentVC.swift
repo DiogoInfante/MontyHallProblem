@@ -9,18 +9,16 @@ import UIKit
 
 /// Experiment View Controller
 /// On this page is possible to simulate multiple cases of monty hall problem
-class ExperimentVC: BaseViewController {
-    /// Experiment Scene
-    var scene: ExperimentView = ExperimentView()
+class ExperimentVC: BaseViewController<ExperimentView> {
     /// Initializes a ExperimentVC.
     init() {
-        super.init()
+        super.init(scene: ExperimentView())
     }
     /// View did load cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         /// Background
-        self.myView.update(.smoothBackground)
+        self.contentView.update(.smoothBackground)
         /// Scene construction
         view.addSubview(scene)
         scene.setScene(root: view)

@@ -8,10 +8,10 @@
 import UIKit
 
 /// Tutorial View
-class TutorialView: UIView {
+class TutorialView: NavegationView {
     /// Initializes a Tutorial View
     init() {
-        super.init(frame: .zero)
+        super.init()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

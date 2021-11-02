@@ -8,10 +8,10 @@
 import UIKit
 
 /// Experiment View
-class ExperimentView: UIView {
+class ExperimentView: NavegationView {
     /// Initializes a experiment view
     init() {
-        super.init(frame: .zero)
+        super.init()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

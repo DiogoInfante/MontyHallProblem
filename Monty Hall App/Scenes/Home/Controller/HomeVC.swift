@@ -10,12 +10,10 @@ import UIKit
 /// HomeVC is the first page of the app.
 /// It contains a menu to navigate in between pages.
 /// Also has the tiltle and some images.
-class HomeVC: BaseViewController {
+class HomeVC: BaseViewController<HomeView> {
     /// Available factories.
     typealias Factory = PuzzleVCFactory & ExperimentVCFactory & TutorialVCFactory
     let factory: Factory
-    /// Home Scene
-    var scene: HomeView = HomeView()
     /// Selection index:
     ///     - 0: Puzzle
     ///     - 1: Experiment
@@ -24,25 +22,23 @@ class HomeVC: BaseViewController {
     /// Initializes a HomeVC.
     init(factory: Factory) {
         self.factory = factory
-        super.init()
+        super.init(scene: HomeView())
     }
     /// View did load cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         /// Background
-        self.myView.update(.background)
-        /// Scene construction.
-        view.addSubview(scene)
+        self.contentView.update(.background)
         /// Scene constraints: To allow scene width reach the border
         sceneConstraints()
         /// Button Targets
-        scene.menu.button.subView.addTarget(self, action: #selector(tappedNavagation), for: .touchUpInside)
+        scene.menu.button.subView.addTarget(self, action: #selector(tappedNavegation), for: .touchUpInside)
         scene.menu.nextArrow.subView.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
         scene.menu.backArrow.subView.addTarget(self, action: #selector(tappedLast), for: .touchUpInside)
     }
     /// Called when menu button is pressed
     /// It pushes to the view controller refered to selection id
-    @objc func tappedNavagation() {
+    @objc func tappedNavegation() {
         if selectionId == 0 {
             let puzzleVC = factory.makePuzzleVC()
             self.navigationController?.pushViewController(puzzleVC, animated: true)

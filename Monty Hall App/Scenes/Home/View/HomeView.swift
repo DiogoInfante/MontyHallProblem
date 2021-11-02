@@ -8,7 +8,7 @@
 import UIKit
 
 /// Home View
-class HomeView: UIView {
+class HomeView: NavegationView {
     /// Banner with app title
     let banner = AssetView(.banner)
     /// Seleciton Menu
@@ -21,7 +21,7 @@ class HomeView: UIView {
     let space = UIScreen.main.bounds.height*0.03
     /// Initializes a Home View
     init() {
-        super.init(frame: .zero)
+        super.init(isRoot: true)
         setupUI()
     }
     /// Adds constraints to menu - Hierarchy 1.
@@ -31,13 +31,12 @@ class HomeView: UIView {
         menu.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         menu.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45).isActive = true
         menu.widthAnchor.constraint(equalTo: menu.heightAnchor, multiplier: 1.47).isActive = true
-
     }
     /// Adds constraints to banner - Hierarchy 2.
     fileprivate func bannerConstraints() {
         banner.translatesAutoresizingMaskIntoConstraints = false
         banner.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        banner.topAnchor.constraint(equalTo: self.topAnchor, constant: space).isActive = true
+        banner.topAnchor.constraint(equalTo: self.topBar.bottomAnchor).isActive = true
         banner.bottomAnchor.constraint(equalTo: menu.topAnchor, constant: -space).isActive = true
         banner.widthAnchor.constraint(equalTo: banner.heightAnchor, multiplier: 1.33).isActive = true
     }

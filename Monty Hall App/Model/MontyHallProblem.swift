@@ -94,7 +94,7 @@ class MontyHallProblem {
     ///     - Returns a random element form eligible doors
     func randomNonPrizedDoorSelection(_ doors: [Door]) -> Door {
         /// Filter eligible doors
-        let eligibleDoors = doors.filter { $0.isPrized != true }
+        let eligibleDoors = doors.filter { !$0.isPrized }
         /// Returns a random element form eligible doors
         return eligibleDoors[Int.random(in: 0...eligibleDoors.count-1)]
     }

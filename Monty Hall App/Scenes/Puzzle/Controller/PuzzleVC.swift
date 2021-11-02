@@ -8,23 +8,18 @@
 import UIKit
 
 /// Puzzle View Controller
-class PuzzleVC: BaseViewController {
-    /// Puzzle Scene
-    let scene = PuzzleView()
+class PuzzleVC: BaseViewController<PuzzleView> {
     /// Monty Hall problem
     var montyHallProblem = MontyHallProblem(3)
     /// Initializes a Puzzle View Controller
     init() {
-        super.init()
+        super.init(scene: PuzzleView())
     }
     /// VIew did load cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         /// Background
-        self.myView.update(.smoothBackground)
-        /// Scene construction
-        view.addSubview(scene)
-        scene.setScene(root: view)
+        self.contentView.update(.smoothBackground)
         /// Collection View Methods
         scene.collection.delegate = self
         scene.collection.dataSource = self
@@ -34,7 +29,6 @@ class PuzzleVC: BaseViewController {
         scene.choice.keepChoice.subView.addTarget(self, action: #selector(keepChoice),
                                                   for: .touchUpInside)
         scene.reset.subView.addTarget(self, action: #selector(reset), for: .touchUpInside)
-        scene.back.subView.addTarget(self, action: #selector(back), for: .touchUpInside)
         /// First State
         GameInteractor.interactor.start()
     }
@@ -55,9 +49,6 @@ class PuzzleVC: BaseViewController {
         if GameInteractor.interactor.currrentState == .ended {
             GameInteractor.interactor.reset()
         }
-    }
-    @objc func back() {
-        self.navigationController?.popViewController(animated: true)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

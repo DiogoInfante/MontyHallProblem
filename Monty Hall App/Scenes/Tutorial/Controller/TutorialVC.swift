@@ -9,18 +9,16 @@ import UIKit
 
 /// Tutorial View Controller
 /// This page explains the solution to monty hall problem
-class TutorialVC: BaseViewController {
-    /// Tutorial Scene
-    var scene: TutorialView = TutorialView()
+class TutorialVC: BaseViewController<NavegationView> {
     /// Initializes a TutorialVC.
     init() {
-        super.init()
+        super.init(scene: TutorialView())
     }
     /// View did load cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         /// Background
-        self.myView.update(.smoothBackground)
+        self.contentView.update(.smoothBackground)
         /// Scene construction
         view.addSubview(scene)
         scene.setScene(root: view)

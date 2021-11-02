@@ -8,7 +8,7 @@
 import UIKit
 
 /// Puzzle View
-class PuzzleView: UIView {
+class PuzzleView: NavegationView {
     /// Door collection view
     let collection = DoorCollectionView()
     /// Keep choice button
@@ -19,13 +19,11 @@ class PuzzleView: UIView {
     let stage = AssetView(.stage)
     /// Reset
     let reset = AssetView(.playAgain, subView: UIButton())
-    /// Back
-    let back = AssetView(.back, subView: UIButton())
     /// Vertical spacing constant
     let space = UIScreen.main.bounds.height*0.03
     /// Initializes a Puzzle View
     init() {
-        super.init(frame: .zero)
+        super.init()
         setupUI()
     }
     /// Adds constraints to collection view - Hierarchy 1.
@@ -40,7 +38,7 @@ class PuzzleView: UIView {
     fileprivate func panelConstraints() {
         panel.translatesAutoresizingMaskIntoConstraints = false
         panel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        panel.topAnchor.constraint(equalTo: self.topAnchor, constant: space).isActive = true
+        panel.topAnchor.constraint(equalTo: self.topBar.bottomAnchor).isActive = true
         panel.bottomAnchor.constraint(equalTo: collection.topAnchor, constant: -space).isActive = true
         panel.widthAnchor.constraint(equalTo: panel.heightAnchor, multiplier: 1.65).isActive = true
     }
@@ -69,14 +67,6 @@ class PuzzleView: UIView {
         reset.heightAnchor.constraint(equalTo: choice.heightAnchor).isActive = true
         reset.widthAnchor.constraint(equalTo: reset.heightAnchor).isActive = true
     }
-    /// Adds constraints to back - Hierarchy 6.
-    fileprivate func backConstraints() {
-        back.translatesAutoresizingMaskIntoConstraints = false
-        back.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        back.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        back.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.05).isActive = true
-        back.widthAnchor.constraint(equalTo: back.heightAnchor).isActive = true
-    }
     /// Setups UI
     func setupUI() {
         /// Hierarchy 1 - Collection View.
@@ -96,9 +86,6 @@ class PuzzleView: UIView {
         self.addSubview(reset)
         resetConstraints()
         reset.disappear()
-        /// Hierarquy 6 - Back.
-        self.addSubview(back)
-        backConstraints()
         /// Start state
         waitingForFirstChoice()
     }
