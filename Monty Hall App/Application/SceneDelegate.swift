@@ -27,6 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// Window update
         self.window = window
         window.makeKeyAndVisible()
+        /// Play Soundtrack
+        audioManager.play(Tracklist.soundtrack)
     }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -7,7 +7,8 @@
 
 import AVFoundation
 
-class AudioPlayer {
+let audioManager = AudioManager()
+final class AudioManager {
     /// Audio player
     var player = AVAudioPlayer()
     /// PlaySound
