@@ -10,4 +10,6 @@ On this show, there was a game with three doors. Two had goats behind them, and 
 
 What would you do?
 
+![Image of BaseViewController](Resources/appImage1.png)
+
 This problem became a legend in mathematics, becoming a reason for countless discussions and probably some broken friendships. But now, you will understand for once and for all what to do.
