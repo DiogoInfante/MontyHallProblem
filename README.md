@@ -16,12 +16,18 @@ This problem became a legend in mathematics, becoming a reason for countless dis
 
 ## Technicalities:
 
-* Model:  Despite the game show only having 3 doors, this problem has a higher potential. So I developed a generic model that constructs a Monty Hall Problem with any given number of doors. Greater the number, clearly the logical answer gets. It also tracks your history and can simulate a custom number of games.
+### Model:
 
-* Observer Pattern: I chose to use this pattern to make the app responsive as possible. For example, when the controller indicates to open a door on the model, the view is automatically notified, and it opens visually too.
+Despite the game show only having 3 doors, this problem has a higher potential. So I developed a generic model that constructs a Monty Hall Problem with any given number of doors. Greater the number, clearly the logical answer gets. It also tracks your history and can simulate a custom number of games.
+
+### Observer Pattern:
+
+I chose to use this pattern to make the app responsive as possible. For example, when the controller indicates to open a door on the model, the view is automatically notified, and it opens visually too.
 
 ![Image of Observer](Resources/observer.png)
 
-* State Machine: I created a state machine to coordinate all in-game interactions. By dividing the game into states and events, it becomes trivial to control the actions.
+### State Machine: 
+
+I created a state machine to coordinate all in-game interactions. By dividing the game into states and events, it becomes trivial to control the actions.
 
 ![Image of StateMahine](Resources/StateMachine.png)
