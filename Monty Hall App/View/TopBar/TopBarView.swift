@@ -11,7 +11,7 @@ import UIKit
 /// It's a menu that navigates in between pages by clicking on arrows
 class TopBarView: UIView {
     /// Last option of action button
-    let pop = AssetView(.back, subView: UIButton())
+    let pop = AssetView(.pop, subView: UIButton())
     /// Next option of action button
     let sound = AssetView(.discoOn, subView: UIButton())
     /// Horizontal space
@@ -40,26 +40,12 @@ class TopBarView: UIView {
         sound.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         sound.widthAnchor.constraint(equalTo: sound.heightAnchor, multiplier: 1.12).isActive = true
     }
-    /// Called when last or next were pressed
+    /// Toggle disco icon according to soundtrack state
     /// - Parameters:
-    ///      - id: identifies which button is currently pressed
-//    func didSelect(_ id: Int) {
-//        /// Play button (id 0)
-//        if id == 0 {
-//            button.update(.play)
-//            backArrow.disappear()
-//        /// Experiment button (id 1)
-//        } else if id == 1 {
-//            button.update(.experiment)
-//            backArrow.appear()
-//            nextArrow.appear()
-//        }
-//        /// Book button (id 2)
-//        else {
-//            button.update(.book)
-//            nextArrow.disappear()
-//        }
-//    }
+    ///     - isPlaying: Indicates if the music is playing
+    func toggleDisco(_ isPlaying: Bool) {
+        isPlaying ? sound.update(.discoOn) : sound.update(.discoOff)
+    }
     /// Setups UI
     fileprivate func setupUI() {
         /// Hierarchy 1 - Pop.

@@ -8,8 +8,6 @@
 import AVFoundation
 
 class AudioPlayer {
-    /// isPlaying
-    private(set) var isPlaying = false
     /// Audio player
     var player = AVAudioPlayer()
     /// PlaySound
@@ -24,14 +22,17 @@ class AudioPlayer {
                 player.numberOfLoops = numberOfLoops
                 player.prepareToPlay()
                 player.play()
-                isPlaying = true
             } catch {
                 print(error)
             }
         }
     }
-    func stop() {
-       isPlaying = false
+    func toggleMusic() {
+        if player.isPlaying {
+            player.pause()
+        } else {
+            player.play()
+        }
     }
 }
 /// Track List

@@ -54,8 +54,8 @@ class PuzzleView: NavegationView {
     fileprivate func choiceConstraints() {
         choice.translatesAutoresizingMaskIntoConstraints = false
         choice.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        choice.topAnchor.constraint(equalTo: stage.bottomAnchor, constant: space).isActive = true
-        choice.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -space).isActive = true
+        choice.topAnchor.constraint(equalTo: stage.bottomAnchor, constant: space/2).isActive = true
+        choice.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -space/2).isActive = true
         choice.widthAnchor.constraint(equalTo: choice.heightAnchor, multiplier: 2).isActive = true
     }
 

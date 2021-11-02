@@ -33,17 +33,16 @@ class BaseViewController<T:NavegationView>: UIViewController {
         /// Hier 1 - Main View
         view.addSubview(contentView)
         contentView.constraint(to: self.view)
-        /// Hier 2 - Scene View
-        view.addSubview(scene)
-        scene.setScene(root: contentView)
+        /// Play Soundtrack
+        soundTrack.play(Tracklist.soundtrack)
+        /// Button targes
+        scene.topBar.sound.subView.addTarget(self, action: #selector(toggleMusic), for: .touchUpInside)
+        scene.topBar.pop.subView.addTarget(self, action: #selector(pop), for: .touchUpInside)
     }
     /// Toggles music
     @objc func toggleMusic() {
-        if soundTrack.isPlaying {
-            
-        } else {
-            soundTrack.play(Tracklist.soundtrack)
-        }
+        soundTrack.toggleMusic()
+        scene.topBar.toggleDisco(soundTrack.player.isPlaying)
     }
     /// Pop VC
     @objc func pop() {

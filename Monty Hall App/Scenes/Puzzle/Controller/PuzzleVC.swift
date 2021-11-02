@@ -20,6 +20,9 @@ class PuzzleVC: BaseViewController<PuzzleView> {
         super.viewDidLoad()
         /// Background
         self.contentView.update(.smoothBackground)
+        /// Scene setup
+        view.addSubview(scene)
+        scene.setScene(root: contentView)
         /// Collection View Methods
         scene.collection.delegate = self
         scene.collection.dataSource = self

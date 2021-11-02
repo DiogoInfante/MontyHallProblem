@@ -19,9 +19,9 @@ class ExperimentVC: BaseViewController<ExperimentView> {
         super.viewDidLoad()
         /// Background
         self.contentView.update(.smoothBackground)
-        /// Scene construction
+        /// Scene setup
         view.addSubview(scene)
-        scene.setScene(root: view)
+        scene.setScene(root: contentView)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

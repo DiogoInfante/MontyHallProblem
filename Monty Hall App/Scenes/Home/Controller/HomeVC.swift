@@ -29,6 +29,8 @@ class HomeVC: BaseViewController<HomeView> {
         super.viewDidLoad()
         /// Background
         self.contentView.update(.background)
+        /// Scene Setup
+        view.addSubview(scene)
         /// Scene constraints: To allow scene width reach the border
         sceneConstraints()
         /// Button Targets
@@ -45,10 +47,19 @@ class HomeVC: BaseViewController<HomeView> {
         } else if selectionId == 1 {
             /// let experimentVC = factory.makeExperimentVC()
             /// self.navigationController?.pushViewController(experimentVC, animated: true)
+            displayAlert(message: "Simulation of multiple games")
         } else {
             /// let tutorialVC = factory.makeTutorialVC()
             /// self.navigationController?.pushViewController(tutorialVC, animated: true)
+            displayAlert(message: "Problem Explanation")
         }
+    }
+    /// TEMPORARY as the multiplayer is Developed
+    func displayAlert(message: String) {
+        let alert = UIAlertController(title: "Coming Soon", message: message,
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     /// Tapped Next arrow
     @objc func tappedNext() {

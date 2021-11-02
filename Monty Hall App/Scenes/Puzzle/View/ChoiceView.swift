@@ -23,7 +23,7 @@ class ChoiceView: UIView {
         keepChoice.translatesAutoresizingMaskIntoConstraints = false
         keepChoice.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         keepChoice.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        keepChoice.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
+        keepChoice.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45).isActive = true
         keepChoice.heightAnchor.constraint(equalTo: keepChoice.widthAnchor).isActive = true
     }
     /// Adds constraints to switch choice - Hierarchy 2.
@@ -31,7 +31,7 @@ class ChoiceView: UIView {
         switchChoice.translatesAutoresizingMaskIntoConstraints = false
         switchChoice.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         switchChoice.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        switchChoice.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
+        switchChoice.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45).isActive = true
         switchChoice.heightAnchor.constraint(equalTo: switchChoice.widthAnchor).isActive = true
     }
     /// Setups UI
