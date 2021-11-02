@@ -106,7 +106,7 @@ class PuzzleView: UIView {
     func waitingForFirstChoice() {
         reset.springAnimation { result in
             if result {
-                self.reset.fadeOut(delay: 0.5)
+                self.reset.fadeOut(delay: 0.15)
             }
         }
         panel.subView.text = "Tap to choose a door"

@@ -87,6 +87,8 @@ class DoorCollectionViewCell: UICollectionViewCell, ObserverProtocol {
         /// Hierarchy 3 - label.
         contentView.addSubview(label)
         labelConstraints()
+        label.font = UIFont(name: "PhosphateRRSolid", size: 35)
+        label.textColor = .mIce
     }
     /// Label text setup
     /// - Parameters: doorNumber

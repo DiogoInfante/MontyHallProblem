@@ -40,12 +40,16 @@ class ChoiceView: UIView {
         self.addSubview(keepChoice)
         keepChoiceConstraints()
         keepChoice.subView.setTitle("Keep", for: .normal)
-        keepChoice.subView.setTitleColor(.black, for: .normal)
+        keepChoice.subView.setTitleColor(.mGray, for: .normal)
+        keepChoice.subView.titleLabel?.font = UIFont(name: "PhosphateRRSolid", size: 25)
+        keepChoice.subView.titleLabel?.textAlignment = .center
         /// Hierarchy 2 - Switch Choice.
         self.addSubview(switchChoice)
         switchChoiceConstraints()
         switchChoice.subView.setTitle("Switch", for: .normal)
-        switchChoice.subView.setTitleColor(.black, for: .normal)
+        switchChoice.subView.setTitleColor(.mGray, for: .normal)
+        switchChoice.subView.titleLabel?.font = UIFont(name: "PhosphateRRSolid", size: 25)
+        switchChoice.subView.titleLabel?.textAlignment = .center
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

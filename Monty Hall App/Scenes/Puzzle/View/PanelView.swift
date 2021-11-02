@@ -15,8 +15,9 @@ class PanelView: AssetView<UILabel> {
     init(_ asset: Asset = .panel) {
         super.init(asset, subView: UILabel())
         self.subView.textAlignment = .center
-        self.subView.textColor = .yellow
+        self.subView.textColor = .mYellow
         self.subView.numberOfLines = 2
+        self.subView.font = UIFont(name: "PhosphateRRSolid", size: 20)
     }
     /// Update panel display to ask for second choice
     /// - Parameters
