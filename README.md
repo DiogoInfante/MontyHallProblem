@@ -10,7 +10,7 @@ In this era, game shows were on their peaks. One of the most famous was Let's Ma
 
 On this show, there was a game with three doors. Two had goats behind them, and only one had a car. The contestant had to choose a door. Then Monty opened another, showing a Goat. Finally, the player had to decide to keep the first choice or switch to the other closed door.
 
-What would you do?
+### What would you do?
 
 ![Image of AppImage](Resources/appImage4.png)
 
