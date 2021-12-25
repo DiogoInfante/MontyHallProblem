@@ -14,7 +14,9 @@ class ExperimentView: NavegationView {
     /// Picker stack
     let pickerStack = AssetView(.experimentBoard, subView: UIStackView(), 0.7)
     /// Picker stacks cells
-    let cells = [PickerView(.door), PickerView(.shuffle), PickerView(.playAgain)]
+    let cells = [PickerView(.numberOfDoors(3)),
+                 PickerView(.secondChoice(.keepDoor)),
+                 PickerView(.repetitions(100))]
     /// Lever
     let lever = UIView()
     /// Vertical spacing constant

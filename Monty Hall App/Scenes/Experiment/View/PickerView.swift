@@ -13,29 +13,43 @@ class PickerView: AssetView<UIView> {
     /// UI Picker View
     let uiPicker = UIPickerView()
     /// Cell symbol
-    let symbol: AssetView<UIView>
+    var symbol =  AssetView()
+    /// Type
+    let type: PickerType
     /// Initializes a picker view
-    init(_ asset: Asset) {
-        self.symbol = AssetView(asset, subView: UIView())
+    init(_ type: PickerType) {
+        self.type = type
         super.init(.picker, subView: UIView())
+        setupPicker()
+        setupUI()
     }
     /// Adds constraints to uiPicker - Hierarchy 1.
     fileprivate func uiPickerConstraints() {
         uiPicker.translatesAutoresizingMaskIntoConstraints = false
-        uiPicker.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        uiPicker.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
         uiPicker.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        uiPicker.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.66).isActive = true
+        uiPicker.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.62).isActive = true
         uiPicker.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }
     /// Adds constraints to symbol - Hierarchy 2.
     fileprivate func symbolConstraints() {
         symbol.translatesAutoresizingMaskIntoConstraints = false
-        symbol.leftAnchor.constraint(equalTo: uiPicker.leftAnchor).isActive = true
-        symbol.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         symbol.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        symbol.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.66).isActive = true
-        symbol.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        symbol.leftAnchor.constraint(equalTo: uiPicker.rightAnchor).isActive = true
+        symbol.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        symbol.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.66).isActive = true
         symbol.contentMode = .scaleAspectFit
+    }
+    /// Setups Picker
+    fileprivate func setupPicker() {
+        switch type {
+        case .numberOfDoors(let numberOfDoors):
+            self.symbol = AssetView(.doorSymbol, subView: UIView())
+        case .secondChoice(let secondChoice):
+            self.symbol = AssetView(.shuffleSymbol, subView: UIView())
+        case .repetitions(let repetitions):
+            self.symbol = AssetView(.repeatSymbol, subView: UIView())
+        }
     }
     /// Setups UI
     func setupUI() {

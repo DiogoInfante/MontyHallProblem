@@ -16,7 +16,6 @@
 		4D14AA4E272E18DC00B66376 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA4D272E18DC00B66376 /* GameState.swift */; };
 		4D14AA50272E18EF00B66376 /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA4F272E18EF00B66376 /* GameEvent.swift */; };
 		4D14AA52272E19B000B66376 /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA51272E19B000B66376 /* ErrorEvent.swift */; };
-		4D14AA55272E1A6A00B66376 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */; };
 		4D14AA57272E25B700B66376 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA56272E25B700B66376 /* PanelView.swift */; };
 		4D14AA5A272E39CD00B66376 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14AA59272E39CD00B66376 /* Results.swift */; };
 		4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36F3E525DCA39800870ADE /* AppDelegate.swift */; };
@@ -41,6 +40,7 @@
 		4D4BA627277789EB00E3DCB8 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA626277789EB00E3DCB8 /* PickerView.swift */; };
 		4D4BA6292777A47300E3DCB8 /* PuzzleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */; };
 		4D4BA62B2777A66C00E3DCB8 /* ExperimentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */; };
+		4D4BA62D2777AFFA00E3DCB8 /* PickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA62C2777AFFA00E3DCB8 /* PickerType.swift */; };
 		4D8B9BAC272F4A280005B33C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAB272F4A280005B33C /* HomeView.swift */; };
 		4D8B9BB0272F4A450005B33C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAF272F4A450005B33C /* HomeVC.swift */; };
 		4D8B9BB2272F99DD0005B33C /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */; };
@@ -83,7 +83,6 @@
 		4D14AA4D272E18DC00B66376 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		4D14AA4F272E18EF00B66376 /* GameEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEvent.swift; sourceTree = "<group>"; };
 		4D14AA51272E19B000B66376 /* ErrorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEvent.swift; sourceTree = "<group>"; };
-		4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		4D14AA56272E25B700B66376 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 		4D14AA59272E39CD00B66376 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		4D36F3E225DCA39800870ADE /* Monty Hall App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monty Hall App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +113,7 @@
 		4D4BA626277789EB00E3DCB8 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleDelegate.swift; sourceTree = "<group>"; };
 		4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentDelegate.swift; sourceTree = "<group>"; };
+		4D4BA62C2777AFFA00E3DCB8 /* PickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerType.swift; sourceTree = "<group>"; };
 		4D8B9BAB272F4A280005B33C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4D8B9BAF272F4A450005B33C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
@@ -190,7 +190,6 @@
 				4D36F3E525DCA39800870ADE /* AppDelegate.swift */,
 				4D36F3E725DCA39800870ADE /* SceneDelegate.swift */,
 				4D14AA3D272DE6FD00B66376 /* AppContainer.swift */,
-				4D14AA53272E1A5A00B66376 /* Extensions */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -209,14 +208,6 @@
 			children = (
 				4D14AA47272DE82000B66376 /* UIViewExtensions.swift */,
 				4D45AA0D27319DD000E87BBB /* UIColorExtensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4D14AA53272E1A5A00B66376 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4D14AA54272E1A6A00B66376 /* UIApplicationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8B9BC427304EED0005B33C /* ExperimentVC.swift */,
+				4D4BA62C2777AFFA00E3DCB8 /* PickerType.swift */,
 				4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */,
 			);
 			path = Controller;
@@ -609,7 +601,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D14AA55272E1A6A00B66376 /* UIApplicationExtensions.swift in Sources */,
 				4D14AA40272DE7B700B66376 /* BaseViewController.swift in Sources */,
 				4D45AA112731BC0A00E87BBB /* AudioPlayer.swift in Sources */,
 				4D36F43025DCA7B900870ADE /* DoorCollectionViewCell.swift in Sources */,
@@ -620,6 +611,7 @@
 				4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */,
 				4D8B9BB8272FB8E60005B33C /* IntExtensions.swift in Sources */,
 				4D45AA1A2731CE0200E87BBB /* NavegationView.swift in Sources */,
+				4D4BA62D2777AFFA00E3DCB8 /* PickerType.swift in Sources */,
 				4D14AA3E272DE6FD00B66376 /* AppContainer.swift in Sources */,
 				4D8B9BC927304F750005B33C /* ExperimentView.swift in Sources */,
 				4D36F41D25DCA3EA00870ADE /* MontyHallProblem.swift in Sources */,
