@@ -9,6 +9,8 @@ import UIKit
 
 /// Puzzle View Controller
 class PuzzleVC: BaseViewController<PuzzleView> {
+    /// State Machine
+    let stateMachine = StateMachine()
     /// Monty Hall problem
     var montyHallProblem = MontyHallProblem(3)
     /// Initializes a Puzzle View Controller
@@ -26,6 +28,8 @@ class PuzzleVC: BaseViewController<PuzzleView> {
         /// Collection View Methods
         scene.collection.delegate = self
         scene.collection.dataSource = self
+        /// State Machine Delegate
+        stateMachine.delegate = self
         /// Buttons Targets
         scene.choice.switchChoice.subView.addTarget(self, action: #selector(switchChoice),
                                                     for: .touchUpInside)
@@ -33,24 +37,24 @@ class PuzzleVC: BaseViewController<PuzzleView> {
                                                   for: .touchUpInside)
         scene.reset.subView.addTarget(self, action: #selector(reset), for: .touchUpInside)
         /// First State
-        GameInteractor.interactor.start()
+        stateMachine.start()
     }
     /// Case the user keeps the first choice
     @objc func keepChoice() {
-        if GameInteractor.interactor.currrentState == .waitingForSecondChoice {
-            GameInteractor.interactor.madeSecondChoice(.keepDoor)
+        if stateMachine.currrentState == .waitingForSecondChoice {
+            stateMachine.madeSecondChoice(.keepDoor)
         }
     }
     /// Case the user switches the first choice
     @objc func switchChoice() {
-        if GameInteractor.interactor.currrentState == .waitingForSecondChoice {
-            GameInteractor.interactor.madeSecondChoice(.switchDoor)
+        if stateMachine.currrentState == .waitingForSecondChoice {
+            stateMachine.madeSecondChoice(.switchDoor)
         }
     }
     /// Restart
     @objc func reset() {
-        if GameInteractor.interactor.currrentState == .ended {
-            GameInteractor.interactor.reset()
+        if stateMachine.currrentState == .ended {
+            stateMachine.reset()
         }
     }
     required init?(coder: NSCoder) {
@@ -80,14 +84,14 @@ extension PuzzleVC: UICollectionViewDelegate, UICollectionViewDataSource {
     /// Collection view selection setup
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         /// Checks if the first choice was made
-        if GameInteractor.interactor.currrentState == .waitingForFirstChoice {
+        if stateMachine.currrentState == .waitingForFirstChoice {
             /// First choice given selected cell
-            GameInteractor.interactor.madeFirstChoice(indexPath.item)
+            stateMachine.madeFirstChoice(indexPath.item)
         }
     }
 }
 /// State Machine Extension
-extension PuzzleVC: GameInteractorObserver {
+extension PuzzleVC: StateObserver {
     func changingStateFor(event: GameEvent, from oldState: GameState, to newState: GameState) {
         switch (event, newState) {
         /// 1 - Waiting for first choice

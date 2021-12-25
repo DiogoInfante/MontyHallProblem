@@ -13,7 +13,7 @@ class PuzzleView: NavegationView {
     let collection = DoorCollectionView()
     /// Keep choice button
     let choice = ChoiceView()
-    /// Result label
+    /// Panel view
     let panel = PanelView()
     /// Stage
     let stage = AssetView(.stage)
