@@ -8,9 +8,9 @@
 import UIKit
 
 /// Puzzle View Controller
-class PuzzleVC: BaseViewController<PuzzleView> {
+class PuzzleVC: BaseViewController<PuzzleView>, PuzzleDelegate {
     /// State Machine
-    let stateMachine = StateMachine()
+    var stateMachine = StateMachine()
     /// Monty Hall problem
     var montyHallProblem = MontyHallProblem(3)
     /// Initializes a Puzzle View Controller
@@ -25,16 +25,11 @@ class PuzzleVC: BaseViewController<PuzzleView> {
         /// Scene setup
         view.addSubview(scene)
         scene.setScene(root: contentView)
-        /// Collection View Methods
-        scene.collection.delegate = self
-        scene.collection.dataSource = self
-        /// State Machine Delegate
-        stateMachine.delegate = self
+        /// Set delegate
+        set(delegate: self)
         /// Buttons Targets
-        scene.choice.switchChoice.subView.addTarget(self, action: #selector(switchChoice),
-                                                    for: .touchUpInside)
-        scene.choice.keepChoice.subView.addTarget(self, action: #selector(keepChoice),
-                                                  for: .touchUpInside)
+        scene.choice.switchChoice.subView.addTarget(self, action: #selector(switchChoice), for: .touchUpInside)
+        scene.choice.keepChoice.subView.addTarget(self, action: #selector(keepChoice), for: .touchUpInside)
         scene.reset.subView.addTarget(self, action: #selector(reset), for: .touchUpInside)
         /// First State
         stateMachine.start()
@@ -62,7 +57,7 @@ class PuzzleVC: BaseViewController<PuzzleView> {
     }
 }
 /// Collection View Extension
-extension PuzzleVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PuzzleVC {
     /// Collection view number of elements
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return montyHallProblem.numberOfDoors
@@ -91,7 +86,7 @@ extension PuzzleVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 /// State Machine Extension
-extension PuzzleVC: StateObserver {
+extension PuzzleVC {
     func changingStateFor(event: GameEvent, from oldState: GameState, to newState: GameState) {
         switch (event, newState) {
         /// 1 - Waiting for first choice
@@ -120,8 +115,5 @@ extension PuzzleVC: StateObserver {
         default:
             break
         }
-    }
-    func receiveError(event: ErrorEvent, at currentState: GameState) {
-        ///
     }
 }

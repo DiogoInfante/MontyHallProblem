@@ -14,7 +14,6 @@ protocol StateObserver: AnyObject {
     func changingStateFor(event: GameEvent,
                           from oldState: GameState,
                           to newState: GameState)
-    func receiveError(event: ErrorEvent, at currentState: GameState)
 }
 /// State Machine responsible to deal with change of states trigged by events
 class StateMachine {

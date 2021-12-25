@@ -45,9 +45,8 @@ class HomeVC: BaseViewController<HomeView> {
             let puzzleVC = factory.makePuzzleVC()
             self.navigationController?.pushViewController(puzzleVC, animated: true)
         } else if selectionId == 1 {
-            /// let experimentVC = factory.makeExperimentVC()
-            /// self.navigationController?.pushViewController(experimentVC, animated: true)
-            displayAlert(message: "Simulation of multiple games")
+            let experimentVC = factory.makeExperimentVC()
+            self.navigationController?.pushViewController(experimentVC, animated: true)
         } else {
             /// let tutorialVC = factory.makeTutorialVC()
             /// self.navigationController?.pushViewController(tutorialVC, animated: true)

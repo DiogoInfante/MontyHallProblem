@@ -38,6 +38,9 @@
 		4D45AA152731BC8D00E87BBB /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D45AA142731BC8D00E87BBB /* soundtrack.mp3 */; };
 		4D45AA172731C2EE00E87BBB /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AA162731C2EE00E87BBB /* TopBarView.swift */; };
 		4D45AA1A2731CE0200E87BBB /* NavegationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AA192731CE0200E87BBB /* NavegationView.swift */; };
+		4D4BA627277789EB00E3DCB8 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA626277789EB00E3DCB8 /* PickerView.swift */; };
+		4D4BA6292777A47300E3DCB8 /* PuzzleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */; };
+		4D4BA62B2777A66C00E3DCB8 /* ExperimentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */; };
 		4D8B9BAC272F4A280005B33C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAB272F4A280005B33C /* HomeView.swift */; };
 		4D8B9BB0272F4A450005B33C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BAF272F4A450005B33C /* HomeVC.swift */; };
 		4D8B9BB2272F99DD0005B33C /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */; };
@@ -108,6 +111,9 @@
 		4D45AA142731BC8D00E87BBB /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 		4D45AA162731C2EE00E87BBB /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		4D45AA192731CE0200E87BBB /* NavegationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegationView.swift; sourceTree = "<group>"; };
+		4D4BA626277789EB00E3DCB8 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleDelegate.swift; sourceTree = "<group>"; };
+		4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentDelegate.swift; sourceTree = "<group>"; };
 		4D8B9BAB272F4A280005B33C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4D8B9BAF272F4A450005B33C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4D8B9BB1272F99DD0005B33C /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4D36F43425DCAF6A00870ADE /* PuzzleVC.swift */,
+				4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8B9BC827304F750005B33C /* ExperimentView.swift */,
+				4D4BA626277789EB00E3DCB8 /* PickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8B9BC427304EED0005B33C /* ExperimentVC.swift */,
+				4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -626,13 +635,16 @@
 				4D36F44A25DCB03F00870ADE /* PuzzleView.swift in Sources */,
 				4D14AA4C272E180D00B66376 /* StateMachine.swift in Sources */,
 				4DC1011925DD5B6500C35C21 /* DoorCollectionView.swift in Sources */,
+				4D4BA627277789EB00E3DCB8 /* PickerView.swift in Sources */,
 				4D14AA52272E19B000B66376 /* ErrorEvent.swift in Sources */,
 				4D14AA45272DE7DC00B66376 /* Asset.swift in Sources */,
 				4D36F3E825DCA39800870ADE /* SceneDelegate.swift in Sources */,
 				4D45AA0E27319DD000E87BBB /* UIColorExtensions.swift in Sources */,
 				4D8B9BBA273046680005B33C /* MenuView.swift in Sources */,
+				4D4BA6292777A47300E3DCB8 /* PuzzleDelegate.swift in Sources */,
 				4D8B9BB0272F4A450005B33C /* HomeVC.swift in Sources */,
 				4D8B9BC727304EF60005B33C /* TutorialVC.swift in Sources */,
+				4D4BA62B2777A66C00E3DCB8 /* ExperimentDelegate.swift in Sources */,
 				4D8B9BAC272F4A280005B33C /* HomeView.swift in Sources */,
 				4D14AA50272E18EF00B66376 /* GameEvent.swift in Sources */,
 				4DC1A30725DD656500304BA6 /* Experiment.swift in Sources */,
