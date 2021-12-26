@@ -18,6 +18,9 @@ protocol ExperimentDelegate: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 extension ExperimentDelegate {
     func set(delegate: ExperimentDelegate) {
-        
+        for cell in scene.cells {
+            cell.uiPicker.delegate = self
+            cell.uiPicker.dataSource = self
+        }
     }
 }

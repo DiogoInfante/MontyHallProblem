@@ -14,9 +14,9 @@ class ExperimentView: NavegationView {
     /// Picker stack
     let pickerStack = AssetView(.experimentBoard, subView: UIStackView(), 0.7)
     /// Picker stacks cells
-    let cells = [PickerView(.numberOfDoors(3)),
-                 PickerView(.secondChoice(.keepDoor)),
-                 PickerView(.repetitions(100))]
+    let cells = [PickerView(.numberOfDoors),
+                 PickerView(.secondChoice),
+                 PickerView(.repetitions)]
     /// Lever
     let lever = UIView()
     /// Vertical spacing constant
@@ -62,7 +62,7 @@ class ExperimentView: NavegationView {
         for cell in cells {
             pickerStack.subView.addArrangedSubview(cell)
             cell.translatesAutoresizingMaskIntoConstraints = false
-            cell.heightAnchor.constraint(equalTo: pickerStack.subView.heightAnchor, multiplier: 0.25).isActive = true
+            cell.heightAnchor.constraint(equalTo: pickerStack.subView.heightAnchor, multiplier: 0.3).isActive = true
             cell.widthAnchor.constraint(equalTo: cell.heightAnchor, multiplier: 2.7).isActive = true
         }
     }

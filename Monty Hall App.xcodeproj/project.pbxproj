@@ -423,8 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				4D8B9BC427304EED0005B33C /* ExperimentVC.swift */,
-				4D4BA62C2777AFFA00E3DCB8 /* PickerType.swift */,
 				4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */,
+				4D4BA62C2777AFFA00E3DCB8 /* PickerType.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

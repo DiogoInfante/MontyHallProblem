@@ -14,7 +14,7 @@ class PickerView: AssetView<UIView> {
     let uiPicker = UIPickerView()
     /// Cell symbol
     var symbol =  AssetView()
-    /// Type
+    /// Picker type
     let type: PickerType
     /// Initializes a picker view
     init(_ type: PickerType) {
@@ -43,11 +43,11 @@ class PickerView: AssetView<UIView> {
     /// Setups Picker
     fileprivate func setupPicker() {
         switch type {
-        case .numberOfDoors(let numberOfDoors):
+        case .numberOfDoors:
             self.symbol = AssetView(.doorSymbol, subView: UIView())
-        case .secondChoice(let secondChoice):
+        case .secondChoice:
             self.symbol = AssetView(.shuffleSymbol, subView: UIView())
-        case .repetitions(let repetitions):
+        case .repetitions:
             self.symbol = AssetView(.repeatSymbol, subView: UIView())
         }
     }
