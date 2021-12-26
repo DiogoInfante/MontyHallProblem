@@ -22,12 +22,6 @@ class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
     var selectedSecondChoice: SecondChoice = .keepDoor
     /// Selected number of repetitions
     var selectedRepetitions: Int = 100
-    /// Experiment
-    var experiment: Experiment {
-        return Experiment(numberOfDoors: selectedNumberOfDoors,
-                          secondChoice: selectedSecondChoice,
-                          rounds: selectedRepetitions)
-    }
     /// Initializes a ExperimentVC.
     init() {
         super.init(scene: ExperimentView())
@@ -42,6 +36,13 @@ class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
         /// Scene setup
         view.addSubview(scene)
         scene.setScene(root: contentView)
+    }
+    /// Runs an experiment - Trigged by lever delegate
+    func run() {
+        let experiment = Experiment(numberOfDoors: selectedNumberOfDoors,
+                                    secondChoice: selectedSecondChoice,
+                                    rounds: selectedRepetitions)
+        experiment.run()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

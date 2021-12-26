@@ -38,8 +38,8 @@ class PickerView: AssetView<UIView> {
     fileprivate func symbolConstraints() {
         symbol.translatesAutoresizingMaskIntoConstraints = false
         symbol.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        symbol.leftAnchor.constraint(equalTo: uiPicker.rightAnchor).isActive = true
-        symbol.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        symbol.leftAnchor.constraint(equalTo: uiPicker.rightAnchor, constant: 10).isActive = true
+        symbol.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
         symbol.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.66).isActive = true
         symbol.contentMode = .scaleAspectFit
     }

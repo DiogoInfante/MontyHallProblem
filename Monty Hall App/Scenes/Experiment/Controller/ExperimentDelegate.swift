@@ -12,7 +12,9 @@ import Foundation
 /// SubProtocols:
 ///    - UIPickerViewDelegate: Picker view delegate
 ///    - UIPickerViewDataSource: Picker view data source
-protocol ExperimentDelegate: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+///    - UITextFieldDelegate: Text field delegate
+///    - LeverDelegate: Manages gestures interactions
+protocol ExperimentDelegate: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, LeverDelegate {
     var scene: ExperimentView { get set }
     func set(delegate: ExperimentDelegate)
 }
@@ -23,5 +25,6 @@ extension ExperimentDelegate {
             cell.uiPicker.dataSource = self
             cell.textField.delegate = self
         }
+        scene.bottom.delegate = self
     }
 }

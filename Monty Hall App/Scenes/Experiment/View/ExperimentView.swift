@@ -17,8 +17,8 @@ class ExperimentView: NavegationView {
     let cells = [PickerView(.numberOfDoors),
                  PickerView(.secondChoice),
                  PickerView(.repetitions)]
-    /// Lever
-    let lever = LeverView()
+    /// Bottom
+    let bottom = LeverView()
     /// Vertical spacing constant
     let space = UIScreen.main.bounds.height*0.03
     /// Initializes a experiment view
@@ -34,20 +34,20 @@ class ExperimentView: NavegationView {
         panel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
         panel.heightAnchor.constraint(equalTo: panel.widthAnchor, multiplier: 0.6).isActive = true
     }
-    /// Adds constraints to lever - Hierarchy 2.
-    fileprivate func leverConstraints() {
-        lever.translatesAutoresizingMaskIntoConstraints = false
-        lever.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        lever.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -space/2).isActive = true
-        lever.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7).isActive = true
-        lever.heightAnchor.constraint(equalTo: panel.widthAnchor, multiplier: 0.2).isActive = true
+    /// Adds constraints to bottom - Hierarchy 2.
+    fileprivate func bottomConstraints() {
+        bottom.translatesAutoresizingMaskIntoConstraints = false
+        bottom.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        bottom.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -space/2).isActive = true
+        bottom.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7).isActive = true
+        bottom.heightAnchor.constraint(equalTo: panel.widthAnchor, multiplier: 0.2).isActive = true
     }
     /// Adds constraints to picker - Hierarchy 3.
     fileprivate func pickerStackConstraints() {
         pickerStack.translatesAutoresizingMaskIntoConstraints = false
         pickerStack.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         pickerStack.topAnchor.constraint(equalTo: panel.bottomAnchor, constant: space).isActive = true
-        pickerStack.bottomAnchor.constraint(equalTo: lever.topAnchor, constant: -space).isActive = true
+        pickerStack.bottomAnchor.constraint(equalTo: bottom.topAnchor, constant: -space).isActive = true
         pickerStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.83).isActive = true
     }
     /// Setups list stack view - Hierarchy 3.1.
@@ -71,9 +71,9 @@ class ExperimentView: NavegationView {
         /// Hierarchy 1 - Panel.
         self.addSubview(panel)
         panelConstraints()
-        /// HIerarchy 2 - Lever
-        self.addSubview(lever)
-        leverConstraints()
+        /// HIerarchy 2 - bottom
+        self.addSubview(bottom)
+        bottomConstraints()
         /// Hierarchy 3 - Experiment Board.
         self.addSubview(pickerStack)
         pickerStackConstraints()

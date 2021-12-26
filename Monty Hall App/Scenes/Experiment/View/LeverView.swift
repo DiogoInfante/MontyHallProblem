@@ -8,15 +8,21 @@
 import UIKit
 import Foundation
 
+protocol LeverDelegate: AnyObject {
+    func run()
+}
 /// Lever View that triggers a experiment
 class LeverView: UIView {
     /// Rail where the lever runs
     let rail = AssetView(.rail, subView: UIView())
     /// Lever
     let lever = AssetView(.lever, subView: UIView())
+    /// Delegate
+    weak var delegate: LeverDelegate?
     /// Initializes a lever view
     init() {
         super.init(frame: .zero)
+        setupGestures()
         setupUI()
     }
     /// Adds constraints to rail - Hierarchy 1.
@@ -34,6 +40,21 @@ class LeverView: UIView {
         lever.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         lever.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8).isActive = true
         lever.widthAnchor.constraint(equalTo: lever.heightAnchor).isActive = true
+    }
+    /// Gesture recognizer setup
+    func setupGestures() {
+        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        lever.subView.addGestureRecognizer(gestureRecognizer)
+        lever.subView.isUserInteractionEnabled = true
+    }
+    /// Handles gesture to move the lever guided by the rail
+    ///     - Parameters:
+    ///         - sender: Pan gesture recognizer used to track location
+    @objc private func handlePan(_ sender: UISwipeGestureRecognizer) {
+        if sender.location(in: self).x >= rail.frame.origin.x &&
+            sender.location(in: self).x <= rail.frame.origin.x + rail.frame.maxX {
+            lever.center = CGPoint(x: sender.location(in: self).x, y: lever.center.y)
+        }
     }
     /// Setups UI
     func setupUI() {
