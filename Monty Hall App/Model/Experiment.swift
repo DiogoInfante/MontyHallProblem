@@ -33,8 +33,6 @@ class Experiment {
     func run() {
         /// Multiple Interations
         for _ in 0...rounds-1 {
-            /// Monty Hall Setup
-            montyHall = MontyHallProblem(numberOfDoors)
             /// First Choice
             montyHall.firstChoice(Int.random(in: 0..<numberOfDoors-1))
             /// Second Choice

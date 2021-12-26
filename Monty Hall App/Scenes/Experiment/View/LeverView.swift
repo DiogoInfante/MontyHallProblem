@@ -51,9 +51,24 @@ class LeverView: UIView {
     ///     - Parameters:
     ///         - sender: Pan gesture recognizer used to track location
     @objc private func handlePan(_ sender: UISwipeGestureRecognizer) {
-        if sender.location(in: self).x >= rail.frame.origin.x &&
-            sender.location(in: self).x <= rail.frame.origin.x + rail.frame.maxX {
+        /// Bounds
+        let minX = rail.frame.origin.x
+        let maxX = rail.frame.origin.x + rail.frame.maxX
+        /// Move condition
+        if (minX...maxX).contains(sender.location(in: self).x) {
             lever.center = CGPoint(x: sender.location(in: self).x, y: lever.center.y)
+        }
+        /// Trigger condition
+        if sender.state == UIGestureRecognizer.State.ended {
+            if lever.center.x >= maxX*0.95 {
+                delegate?.run()
+                lever.isUserInteractionEnabled = false
+                lever.translation(duration: 1, delay: 2, centerTo: CGPoint(x: minX, y: lever.center.y)) { result in
+                    self.lever.isUserInteractionEnabled = true
+                }
+            } else {
+                lever.center = CGPoint(x: rail.frame.origin.x, y: lever.center.y)
+            }
         }
     }
     /// Setups UI

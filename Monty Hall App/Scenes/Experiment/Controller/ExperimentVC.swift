@@ -43,6 +43,7 @@ class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
                                     secondChoice: selectedSecondChoice,
                                     rounds: selectedRepetitions)
         experiment.run()
+        dump(experiment.montyHall.results)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
