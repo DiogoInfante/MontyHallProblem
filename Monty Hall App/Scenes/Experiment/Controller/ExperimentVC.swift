@@ -22,6 +22,12 @@ class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
     var selectedSecondChoice: SecondChoice = .keepDoor
     /// Selected number of repetitions
     var selectedRepetitions: Int = 100
+    /// Experiment
+    var experiment: Experiment {
+        return Experiment(numberOfDoors: selectedNumberOfDoors,
+                          secondChoice: selectedSecondChoice,
+                          rounds: selectedRepetitions)
+    }
     /// Initializes a ExperimentVC.
     init() {
         super.init(scene: ExperimentView())
@@ -89,14 +95,17 @@ extension ExperimentVC {
             case .numberOfDoors:
                 if pickerView == cell.uiPicker {
                     selectedNumberOfDoors = numberOfDoors[row]
+                    cell.textField.text = String(selectedNumberOfDoors)
                 }
             case .secondChoice:
                 if pickerView == cell.uiPicker {
                     selectedSecondChoice = secondChoices[row]
+                    cell.textField.text = secondChoices[row] == .keepDoor ? "Keep" : "Switch"
                 }
             case .repetitions:
                 if pickerView == cell.uiPicker {
                     selectedRepetitions = repetitions[row]
+                    cell.textField.text = String(repetitions[row])
                 }
             }
         }

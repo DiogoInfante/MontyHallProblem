@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  Experiment.swift
 //  Monty Hall App
 //
 //  Created by Diogo Infante on 17/02/21.
@@ -10,54 +10,39 @@ import Foundation
 /// Experiment: It consists on a simultation of n games of monty hall with a generic number of doors
 /// It gives the winning rate by choosing to always switch or always keep the first choice
 class Experiment {
-    private var numberOfDoors: Int
-    private var rounds: Int
-    private var secondChoice: SecondChoice
-    private(set) var wins: Int = 0
-    var winningRate: Double {
-        Double(wins)/Double(rounds)
-    }
+    /// Number of doors
+    private(set) var numberOfDoors: Int
+    /// Number of rounds
+    private(set) var rounds: Int
+    /// Second choice made
+    private(set) var secondChoice: SecondChoice
+    /// Monty hall problem instance
+    private(set) var montyHall: MontyHallProblem
     /// Initializes a Experiment
     /// - Parameters:
     ///     - numberOfDoors: Number of available doors
     ///     - rounds: Total number of rounds
     ///     - secondChoice: SecondChoice
-    init(numberOfDoors: Int, rounds: Int, secondChoice: SecondChoice) {
+    init(numberOfDoors: Int, secondChoice: SecondChoice, rounds: Int) {
         self.numberOfDoors = numberOfDoors
         self.rounds = rounds
         self.secondChoice = secondChoice
-        multiplePuzzles()
+        self.montyHall = MontyHallProblem(numberOfDoors)
     }
     /// Instantiates multiple puzzles according to class parameters
-    func multiplePuzzles() {
-        /// Winning events
-        var wins: Int = 0
+    func run() {
         /// Multiple Interations
         for _ in 0...rounds-1 {
             /// Monty Hall Setup
-            let montyHall = MontyHallProblem(numberOfDoors)
+            montyHall = MontyHallProblem(numberOfDoors)
             /// First Choice
             montyHall.firstChoice(Int.random(in: 0..<numberOfDoors-1))
             /// Second Choice
-            if montyHall.secondChoice(secondChoice) {
-                /// Interaction update
-                wins += 1
-            }
+            let _ = montyHall.secondChoice(secondChoice)
+            /// Open all
+            montyHall.openAll()
+            /// Reset
+            montyHall.reset()
         }
     }
-    /// Updates experiment parameters and runs it
-    /// - Parameters:
-    ///     - numberOfDoors: Number of available doors
-    ///     - rounds: Total number of rounds
-    ///     - secondChoice: SecondChoice
-    func update(numberOfDoors: Int, rounds: Int, secondChoice: SecondChoice) {
-        self.numberOfDoors = numberOfDoors
-        self.rounds = rounds
-        self.secondChoice = secondChoice
-        multiplePuzzles()
-    }
 }
-/// Test data
-//        let experiment = Experiment(numberOfDoors: 100, rounds: 10000, secondChoice: .switchDoor)
-//        print(experiment.wins)
-//        print(experiment.winningRate)

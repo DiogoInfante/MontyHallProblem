@@ -30,6 +30,5 @@ class Results {
             wins += 1
         }
         winningRate = Double(wins)/Double(rounds)
-        dump(self)
     }
 }

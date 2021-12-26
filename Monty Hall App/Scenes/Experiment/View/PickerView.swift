@@ -12,6 +12,8 @@ import Foundation
 class PickerView: AssetView<UIView> {
     /// UI Picker View
     let uiPicker = UIPickerView()
+    /// Text Field
+    let textField = UITextField()
     /// Cell symbol
     var symbol =  AssetView()
     /// Picker type
@@ -20,6 +22,7 @@ class PickerView: AssetView<UIView> {
     init(_ type: PickerType) {
         self.type = type
         super.init(.picker, subView: UIView())
+        textField.inputView = uiPicker
         setupPicker()
         setupUI()
     }

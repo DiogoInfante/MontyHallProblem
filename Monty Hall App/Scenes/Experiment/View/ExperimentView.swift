@@ -18,7 +18,7 @@ class ExperimentView: NavegationView {
                  PickerView(.secondChoice),
                  PickerView(.repetitions)]
     /// Lever
-    let lever = UIView()
+    let lever = LeverView()
     /// Vertical spacing constant
     let space = UIScreen.main.bounds.height*0.03
     /// Initializes a experiment view
