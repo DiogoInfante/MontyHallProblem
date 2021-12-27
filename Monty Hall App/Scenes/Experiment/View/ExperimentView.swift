@@ -71,6 +71,7 @@ class ExperimentView: NavegationView {
         /// Hierarchy 1 - Panel.
         self.addSubview(panel)
         panelConstraints()
+        panel.requestExperiment()
         /// HIerarchy 2 - lever
         self.addSubview(lever)
         leverConstraints()

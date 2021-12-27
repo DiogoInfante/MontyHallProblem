@@ -19,6 +19,11 @@ class PanelView: AssetView<UILabel> {
         self.subView.numberOfLines = 2
         self.subView.font = UIFont(name: "PhosphateRRSolid", size: 20)
     }
+    // MARK:  - Puzzle View Texts
+    /// Tap to choose a door request
+    func tapToChooseADoor() {
+        self.subView.text = "Tap to choose a door"
+    }
     /// Update panel display to ask for second choice
     /// - Parameters
     ///     - openIds: List with open doors ids: This id goes from 0 to count-1
@@ -42,6 +47,11 @@ class PanelView: AssetView<UILabel> {
             lastResult = "You've Won!"
         }
         self.subView.text = "\(lastResult)\n Wins:\(results.wins) | rounds: \(results.rounds) | rate: \(Int(results.winningRate*100))%"
+    }
+    // MARK:  - Experiment View Texts
+    /// Request to fill the parameters and run experiment
+    func requestExperiment() {
+        self.subView.text = "Select the parameters and slide the lever!"
     }
     /// Set label layout
     /// - Parameters:

@@ -48,8 +48,8 @@ class SliderView: UIView {
     /// Gesture recognizer setup
     func setupGestures() {
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
-        pointer.subView.addGestureRecognizer(gestureRecognizer)
-        pointer.subView.isUserInteractionEnabled = true
+        pointer.addGestureRecognizer(gestureRecognizer)
+        pointer.isUserInteractionEnabled = true
     }
     /// Handles gesture to move the pointer guided by the bar
     ///     - Parameters:
@@ -67,11 +67,11 @@ class SliderView: UIView {
             if pointer.center.x >= maxX*0.95 {
                 delegate?.endCourse()
                 pointer.isUserInteractionEnabled = false
-                pointer.translation(duration: 1, delay: 2, centerTo: CGPoint(x: minX, y: pointer.center.y)) { result in
+                pointer.translation(duration: 0.5, delay: 2, centerTo: CGPoint(x: minX, y: pointer.center.y)) { result in
                     self.pointer.isUserInteractionEnabled = true
                 }
             } else {
-                pointer.center = CGPoint(x: bar.frame.origin.x, y: pointer.center.y)
+                pointer.center = CGPoint(x: minX, y: pointer.center.y)
             }
         }
     }

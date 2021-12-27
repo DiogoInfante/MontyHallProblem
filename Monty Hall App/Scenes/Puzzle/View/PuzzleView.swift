@@ -96,7 +96,7 @@ class PuzzleView: NavegationView {
                 self.reset.fadeOut(delay: 0.15)
             }
         }
-        panel.subView.text = "Tap to choose a door"
+        panel.tapToChooseADoor()
     }
     /// Waiting For Second Second UI Updates
     func waitingForSecondChoice() {
