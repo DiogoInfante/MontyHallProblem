@@ -38,7 +38,7 @@ class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
         scene.setScene(root: contentView)
     }
     /// Runs an experiment - Trigged by lever delegate
-    func run() {
+    func endCourse() {
         let experiment = Experiment(numberOfDoors: selectedNumberOfDoors,
                                     secondChoice: selectedSecondChoice,
                                     rounds: selectedRepetitions)

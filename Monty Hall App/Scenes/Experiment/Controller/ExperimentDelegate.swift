@@ -14,7 +14,7 @@ import Foundation
 ///    - UIPickerViewDataSource: Picker view data source
 ///    - UITextFieldDelegate: Text field delegate
 ///    - LeverDelegate: Manages gestures interactions
-protocol ExperimentDelegate: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, LeverDelegate {
+protocol ExperimentDelegate: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, SliderViewDelegate {
     var scene: ExperimentView { get set }
     func set(delegate: ExperimentDelegate)
 }
@@ -25,6 +25,6 @@ extension ExperimentDelegate {
             cell.uiPicker.dataSource = self
             cell.textField.delegate = self
         }
-        scene.bottom.delegate = self
+        scene.lever.delegate = self
     }
 }

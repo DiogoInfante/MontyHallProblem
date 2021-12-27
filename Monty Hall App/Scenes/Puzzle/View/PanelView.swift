@@ -48,7 +48,7 @@ class PanelView: AssetView<UILabel> {
     ///     - didWin: Indicates if player won the prize
     ///     - results: Contain results history
     func displayExperiment(results: Results) {
-        self.subView.text = "Wins:\(results.wins) | rounds: \(results.rounds) | rate: \(Int(results.winningRate*100))%"
+        self.subView.text = "Wins:\(results.wins) | rounds: \(results.rounds) \nrate: \(Int(results.winningRate*100))%"
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

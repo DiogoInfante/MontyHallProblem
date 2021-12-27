@@ -56,7 +56,7 @@ class PickerView: AssetView<UIView> {
     }
     /// Setups UI
     func setupUI() {
-        /// Hierarchy 1 - Panel.
+        /// Hierarchy 1 - uiPicker.
         self.addSubview(uiPicker)
         uiPickerConstraints()
         /// HIerarchy 2 - Symbol
