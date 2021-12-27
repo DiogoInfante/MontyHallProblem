@@ -54,23 +54,27 @@ class SliderView: UIView {
     /// Handles gesture to move the pointer guided by the bar
     ///     - Parameters:
     ///         - sender: Pan gesture recognizer used to track location
+    /// Discussion: Couldn't use center method because the recalculation after CGAffineTransform does not appear to happen automatically in UIKit. So used origin to control the pointer position instead.
     @objc private func handlePan(_ sender: UISwipeGestureRecognizer) {
         /// Bounds
         let minX = bar.frame.origin.x
         let maxX = bar.frame.origin.x + bar.frame.maxX
-        /// Move condition
+        /// Pointer move condition
         if (minX...maxX).contains(sender.location(in: self).x) {
-            pointer.center = CGPoint(x: sender.location(in: self).x, y: pointer.center.y)
+            pointer.frame.origin = CGPoint(x: sender.location(in: self).x-pointer.frame.width/2,
+                                           y: pointer.frame.origin.y)
         }
         /// Trigger condition
         if sender.state == UIGestureRecognizer.State.ended {
             if pointer.center.x >= maxX*0.95 {
                 delegate?.endCourse()
                 pointer.isUserInteractionEnabled = false
-                pointer.translation(duration: 0.5, delay: 2, centerTo: CGPoint(x: minX, y: pointer.center.y)) { result in
+                /// Animates pointer back to start position
+                pointer.translation(duration: 0.5, delay: 1, centerTo: CGPoint(x: minX, y: pointer.center.y)) { result in
                     self.pointer.isUserInteractionEnabled = true
                 }
             } else {
+                /// Instantly returns to start position if the gesture ended and not trigged 
                 pointer.center = CGPoint(x: minX, y: pointer.center.y)
             }
         }
