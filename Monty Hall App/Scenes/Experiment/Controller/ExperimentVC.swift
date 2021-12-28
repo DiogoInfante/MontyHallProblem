@@ -36,6 +36,8 @@ class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
         /// Scene setup
         view.addSubview(scene)
         scene.setScene(root: contentView)
+        /// Sets picker default values
+        pickerDefaults()
     }
     /// Runs an experiment - Trigged by lever delegate
     func endCourse() {
@@ -108,6 +110,24 @@ extension ExperimentVC {
                 if pickerView == cell.uiPicker {
                     selectedRepetitions = repetitions[row]
                     cell.textField.text = String(repetitions[row])
+                }
+            }
+        }
+    }
+    func pickerDefaults() {
+        for cell in scene.cells {
+            switch cell.type {
+            case .numberOfDoors:
+                if let defaultIndex = numberOfDoors.firstIndex(where: { $0 == selectedNumberOfDoors }) {
+                    cell.uiPicker.selectRow(defaultIndex, inComponent: 0, animated: true)
+                }
+            case .secondChoice:
+                if let defaultIndex = secondChoices.firstIndex(where: { $0 == selectedSecondChoice }) {
+                    cell.uiPicker.selectRow(defaultIndex, inComponent: 0, animated: true)
+                }
+            case .repetitions:
+                if let defaultIndex = repetitions.firstIndex(where: { $0 == selectedRepetitions }) {
+                    cell.uiPicker.selectRow(defaultIndex, inComponent: 0, animated: true)
                 }
             }
         }
