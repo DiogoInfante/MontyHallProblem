@@ -30,7 +30,7 @@ class TopBarView: UIView {
         pop.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         pop.leftAnchor.constraint(equalTo: self.leftAnchor, constant: space).isActive = true
         pop.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        pop.widthAnchor.constraint(equalTo: pop.heightAnchor).isActive = true
+        pop.widthAnchor.constraint(equalTo: pop.heightAnchor, multiplier: 0.95).isActive = true
     }
     /// Adds constraints to next item - Hierarchy 3.
     fileprivate func soundConstraints() {

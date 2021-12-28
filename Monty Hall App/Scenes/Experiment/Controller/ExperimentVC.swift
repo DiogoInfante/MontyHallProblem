@@ -11,11 +11,11 @@ import UIKit
 /// On this page is possible to simulate multiple cases of monty hall problem
 class ExperimentVC: BaseViewController<ExperimentView>, ExperimentDelegate {
     /// Array with all possible number of doors
-    let numberOfDoors: [Int] = Array(3...1000)
+    let numberOfDoors: [Int] = [3,4,5,6,7,8,9,10,15,20,25,50,100,250,500,1000]
     /// Array with possible second choices
     let secondChoices: [SecondChoice] = [.keepDoor, .switchDoor]
     /// Array with all possible number of repetitions
-    let repetitions: [Int] = Array(1...10000)
+    let repetitions: [Int] = [1,10,100,500,1000,10000]
     /// Selected number of doors
     var selectedNumberOfDoors: Int = 3
     /// Selected second choice

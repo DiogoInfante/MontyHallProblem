@@ -62,7 +62,7 @@ class ExperimentView: NavegationView {
         for cell in cells {
             pickerStack.subView.addArrangedSubview(cell)
             cell.translatesAutoresizingMaskIntoConstraints = false
-            cell.heightAnchor.constraint(equalTo: pickerStack.subView.heightAnchor, multiplier: 0.3).isActive = true
+            cell.heightAnchor.constraint(equalTo: pickerStack.subView.heightAnchor, multiplier: 0.25).isActive = true
             cell.widthAnchor.constraint(equalTo: cell.heightAnchor, multiplier: 2.7).isActive = true
         }
     }

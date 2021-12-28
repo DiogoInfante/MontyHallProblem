@@ -66,7 +66,7 @@ class SliderView: UIView {
         }
         /// Trigger condition
         if sender.state == UIGestureRecognizer.State.ended {
-            if pointer.center.x >= maxX*0.95 {
+            if pointer.center.x >= maxX*0.98 {
                 delegate?.endCourse()
                 pointer.isUserInteractionEnabled = false
                 /// Animates pointer back to start position
