@@ -48,7 +48,7 @@ class PuzzleView: NavegationView {
         stage.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         stage.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: -5).isActive = true
         stage.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        stage.heightAnchor.constraint(equalTo: stage.widthAnchor, multiplier: 0.27).isActive = true
+        stage.heightAnchor.constraint(equalTo: stage.widthAnchor, multiplier: 0.275).isActive = true
     }
     /// Adds constraints to results - Hierarchy 4.
     fileprivate func choiceConstraints() {
