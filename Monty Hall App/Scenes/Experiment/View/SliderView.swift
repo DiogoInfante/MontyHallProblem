@@ -46,7 +46,7 @@ class SliderView: UIView {
         pointer.widthAnchor.constraint(equalTo: pointer.heightAnchor).isActive = true
     }
     /// Gesture recognizer setup
-    func setupGestures() {
+    fileprivate func setupGestures() {
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         pointer.addGestureRecognizer(gestureRecognizer)
         pointer.isUserInteractionEnabled = true
@@ -59,24 +59,31 @@ class SliderView: UIView {
         /// Bounds
         let minX = bar.frame.origin.x
         let maxX = bar.frame.origin.x + bar.frame.maxX
+        /// Half slider width
+        let halfW = pointer.frame.width/2
         /// Pointer move condition
         if (minX...maxX).contains(sender.location(in: self).x) {
-            pointer.frame.origin = CGPoint(x: sender.location(in: self).x-pointer.frame.width/2,
+            pointer.frame.origin = CGPoint(x: sender.location(in: self).x-halfW,
                                            y: pointer.frame.origin.y)
         }
-        /// Trigger condition
+        /// Finger left the screen
         if sender.state == UIGestureRecognizer.State.ended {
-            if pointer.center.x >= maxX*0.98 {
+            /// Trigger condition: Delays and return smoothly
+            if pointer.frame.origin.x+halfW >= maxX*0.98 {
                 delegate?.endCourse()
-                pointer.isUserInteractionEnabled = false
-                /// Animates pointer back to start position
-                pointer.translation(duration: 0.5, delay: 1, centerTo: CGPoint(x: minX, y: pointer.center.y)) { result in
-                    self.pointer.isUserInteractionEnabled = true
-                }
+                animateBack(duration: 0.5, delay: 1, to: CGPoint(x: minX, y: pointer.center.y))
             } else {
                 /// Instantly returns to start position if the gesture ended and not trigged 
-                pointer.center = CGPoint(x: minX, y: pointer.center.y)
+                animateBack(duration: 0.1, delay: 0, to: CGPoint(x: minX, y: pointer.center.y))
             }
+        }
+    }
+    /// Animates slider translation back to start position
+    func animateBack(duration: CGFloat, delay: CGFloat, to point: CGPoint) {
+        pointer.isUserInteractionEnabled = false
+        pointer.translation(duration: duration, delay: delay,
+                            centerTo: point) { result in
+            self.pointer.isUserInteractionEnabled = true
         }
     }
     /// Setups UI
