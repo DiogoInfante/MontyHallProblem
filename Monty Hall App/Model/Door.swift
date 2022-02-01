@@ -42,13 +42,13 @@ class Door {
             notifyObserver()
         }
     }
+    /// Observer
+    weak var observer: ObserverProtocol?
     /// Initializes a Door
     /// - Parameters: id: Door id
     init(_ id: Int) {
         self.id = id
     }
-    /// Observer
-    weak var observer: ObserverProtocol?
     /// Notification
     private func notifyObserver() {
         observer?.stateUpdated(_state)
