@@ -8,7 +8,7 @@
 import UIKit
 
 /// Tutorial View
-class TutorialView: NavegationView {
+class TutorialView: NavigationView {
     /// Initializes a Tutorial View
     init() {
         super.init()

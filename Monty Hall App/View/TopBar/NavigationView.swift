@@ -9,7 +9,7 @@ import UIKit
 
 /// Navegation View is a View that intrinsically has a top bar view
 /// If it's the root view, the back button disappears
-class NavegationView: UIView {
+class NavigationView: UIView {
     /// Indicates if the view is a root view
     let isRoot: Bool
     /// Instatiates a top bar

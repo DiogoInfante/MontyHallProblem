@@ -8,7 +8,7 @@
 import UIKit
 
 /// Home View
-class HomeView: NavegationView {
+class HomeView: NavigationView {
     /// Banner with app title
     let banner = AssetView(.banner)
     /// Seleciton Menu

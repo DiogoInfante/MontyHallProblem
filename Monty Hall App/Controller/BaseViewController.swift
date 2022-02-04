@@ -9,7 +9,7 @@ import UIKit
 
 /// A BaseViewController class that is used to implement new ViewControllers.
 /// It is based on a view that is received at init that is the main container of other subviews.
-class BaseViewController<T:NavegationView>: UIViewController {
+class BaseViewController<T:NavigationView>: UIViewController {
     /// Scene
     var scene: T
     /// Content View
@@ -31,7 +31,7 @@ class BaseViewController<T:NavegationView>: UIViewController {
         /// Hier 1 - Main View
         view.addSubview(contentView)
         contentView.constraint(to: self.view)
-        /// Button targes
+        /// Button targets
         scene.topBar.sound.subView.addTarget(self, action: #selector(toggleMusic), for: .touchUpInside)
         scene.topBar.pop.subView.addTarget(self, action: #selector(pop), for: .touchUpInside)
     }

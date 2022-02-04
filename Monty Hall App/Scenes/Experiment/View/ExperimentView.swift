@@ -8,7 +8,7 @@
 import UIKit
 
 /// Experiment View
-class ExperimentView: NavegationView {
+class ExperimentView: NavigationView {
     /// Panel view
     let panel = PanelView()
     /// Picker stack

@@ -36,7 +36,7 @@
 		4D45AA132731BC4700E87BBB /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AA122731BC4700E87BBB /* Media.swift */; };
 		4D45AA152731BC8D00E87BBB /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D45AA142731BC8D00E87BBB /* soundtrack.mp3 */; };
 		4D45AA172731C2EE00E87BBB /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AA162731C2EE00E87BBB /* TopBarView.swift */; };
-		4D45AA1A2731CE0200E87BBB /* NavegationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AA192731CE0200E87BBB /* NavegationView.swift */; };
+		4D45AA1A2731CE0200E87BBB /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45AA192731CE0200E87BBB /* NavigationView.swift */; };
 		4D4BA627277789EB00E3DCB8 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA626277789EB00E3DCB8 /* PickerView.swift */; };
 		4D4BA6292777A47300E3DCB8 /* PuzzleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */; };
 		4D4BA62B2777A66C00E3DCB8 /* ExperimentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */; };
@@ -110,7 +110,7 @@
 		4D45AA122731BC4700E87BBB /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		4D45AA142731BC8D00E87BBB /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 		4D45AA162731C2EE00E87BBB /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
-		4D45AA192731CE0200E87BBB /* NavegationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegationView.swift; sourceTree = "<group>"; };
+		4D45AA192731CE0200E87BBB /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		4D4BA626277789EB00E3DCB8 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		4D4BA6282777A47200E3DCB8 /* PuzzleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleDelegate.swift; sourceTree = "<group>"; };
 		4D4BA62A2777A66B00E3DCB8 /* ExperimentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentDelegate.swift; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		4D45AA182731C7FF00E87BBB /* TopBar */ = {
 			isa = PBXGroup;
 			children = (
-				4D45AA192731CE0200E87BBB /* NavegationView.swift */,
+				4D45AA192731CE0200E87BBB /* NavigationView.swift */,
 				4D45AA162731C2EE00E87BBB /* TopBarView.swift */,
 			);
 			path = TopBar;
@@ -614,7 +614,7 @@
 				4D45AA172731C2EE00E87BBB /* TopBarView.swift in Sources */,
 				4D36F3E625DCA39800870ADE /* AppDelegate.swift in Sources */,
 				4D8B9BB8272FB8E60005B33C /* IntExtensions.swift in Sources */,
-				4D45AA1A2731CE0200E87BBB /* NavegationView.swift in Sources */,
+				4D45AA1A2731CE0200E87BBB /* NavigationView.swift in Sources */,
 				4D4BA62D2777AFFA00E3DCB8 /* PickerType.swift in Sources */,
 				4D14AA3E272DE6FD00B66376 /* AppContainer.swift in Sources */,
 				4D8B9BC927304F750005B33C /* ExperimentView.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 /// Tutorial View Controller
 /// This page explains the solution to monty hall problem
-class TutorialVC: BaseViewController<NavegationView> {
+class TutorialVC: BaseViewController<NavigationView> {
     /// Initializes a TutorialVC.
     init() {
         super.init(scene: TutorialView())

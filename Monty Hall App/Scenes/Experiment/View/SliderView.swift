@@ -1,5 +1,5 @@
 //
-//  LeverView.swift
+//  SliderView.swift
 //  Monty Hall App
 //
 //  Created by Diogo Infante on 26/12/21.

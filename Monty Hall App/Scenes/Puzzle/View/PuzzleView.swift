@@ -8,7 +8,7 @@
 import UIKit
 
 /// Puzzle View
-class PuzzleView: NavegationView {
+class PuzzleView: NavigationView {
     /// Door collection view
     let collection = DoorCollectionView()
     /// Keep choice button
