@@ -36,19 +36,19 @@ class PuzzleVC: BaseViewController<PuzzleView>, PuzzleDelegate {
     }
     /// Case the user keeps the first choice
     @objc func keepChoice() {
-        if stateMachine.currrentState == .waitingForSecondChoice {
+        if stateMachine.currentState == .waitingForSecondChoice {
             stateMachine.madeSecondChoice(.keepDoor)
         }
     }
     /// Case the user switches the first choice
     @objc func switchChoice() {
-        if stateMachine.currrentState == .waitingForSecondChoice {
+        if stateMachine.currentState == .waitingForSecondChoice {
             stateMachine.madeSecondChoice(.switchDoor)
         }
     }
     /// Restart
     @objc func reset() {
-        if stateMachine.currrentState == .ended {
+        if stateMachine.currentState == .ended {
             stateMachine.reset()
         }
     }
@@ -79,7 +79,7 @@ extension PuzzleVC {
     /// Collection view selection setup
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         /// Checks if the first choice was made
-        if stateMachine.currrentState == .waitingForFirstChoice {
+        if stateMachine.currentState == .waitingForFirstChoice {
             /// First choice given selected cell
             stateMachine.madeFirstChoice(indexPath.item)
         }

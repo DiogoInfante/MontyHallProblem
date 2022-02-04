@@ -18,13 +18,13 @@ protocol StateObserver: AnyObject {
 /// State Machine responsible to deal with change of states trigged by events
 class StateMachine {
     /// Current state of observed VC
-    private(set) var currrentState: GameState = .idle
+    private(set) var currentState: GameState = .idle
     /// Current observed VC
     weak var delegate: StateObserver?
     /// Initializes a State Machine
     init(_ firstState: GameState = .idle) {
-        self.currrentState = firstState
-        debugPrint("Initialized a state machine with: \(currrentState)")
+        self.currentState = firstState
+        debugPrint("Initialized a state machine with: \(currentState)")
     }
     /// State Change
     /// Changes the state with an event to newState
@@ -33,9 +33,9 @@ class StateMachine {
     ///     - newState: GameState
     private func changeState(with event: GameEvent, to newState: GameState) {
         guard let observedVC = delegate else { return }
-        debugPrint("Event:", event, "State changed from:", currrentState, "to:", newState)
-        observedVC.changingStateFor(event: event, from: currrentState, to: newState)
-        currrentState = newState
+        debugPrint("Event:", event, "State changed from:", currentState, "to:", newState)
+        observedVC.changingStateFor(event: event, from: currentState, to: newState)
+        currentState = newState
     }
     /// 1 - Start from .waiting for first choice
     func start() {
