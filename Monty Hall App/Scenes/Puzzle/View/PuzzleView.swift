@@ -27,7 +27,7 @@ class PuzzleView: NavigationView {
         setupUI()
     }
     /// Adds constraints to collection view - Hierarchy 1.
-    fileprivate func collectionViewContraints() {
+    fileprivate func collectionViewConstraints() {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         collection.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -71,7 +71,7 @@ class PuzzleView: NavigationView {
     func setupUI() {
         /// Hierarchy 1 - Collection View.
         self.addSubview(collection)
-        collectionViewContraints()
+        collectionViewConstraints()
         /// Hierarchy 2 - Result.
         self.addSubview(panel)
         panelConstraints()
