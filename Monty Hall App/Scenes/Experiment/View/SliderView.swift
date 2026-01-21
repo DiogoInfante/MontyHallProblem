@@ -13,6 +13,7 @@ import Foundation
 protocol SliderViewDelegate: AnyObject {
     func endCourse()
 }
+
 /// Slider View that triggers a experiment
 class SliderView: UIView {
     /// Bar where the pointer runs
@@ -21,6 +22,10 @@ class SliderView: UIView {
     let pointer: AssetView<UIView>
     /// Delegate
     weak var delegate: SliderViewDelegate?
+    
+    /// Constraint that controls the horizontal position
+    private var pointerLeftConstraint: NSLayoutConstraint?
+    
     /// Initializes a lever view
     init(bar: Asset, pointer: Asset) {
         self.bar = AssetView(bar, subView: UIView())
@@ -29,6 +34,7 @@ class SliderView: UIView {
         setupGestures()
         setupUI()
     }
+    
     /// Adds constraints to bar - Hierarchy 1.
     fileprivate func barConstraints() {
         bar.translatesAutoresizingMaskIntoConstraints = false
@@ -37,55 +43,72 @@ class SliderView: UIView {
         bar.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         bar.heightAnchor.constraint(equalTo: bar.widthAnchor, multiplier: 0.095).isActive = true
     }
+    
     /// Adds constraints to rail - Hierarchy 2.
     fileprivate func pointerConstraints() {
         pointer.translatesAutoresizingMaskIntoConstraints = false
-        pointer.centerXAnchor.constraint(equalTo: bar.leftAnchor).isActive = true
+        
+        // Save the constraint to update it during the pan gesture
+        pointerLeftConstraint = pointer.centerXAnchor.constraint(equalTo: bar.leftAnchor)
+        pointerLeftConstraint?.isActive = true
+        
         pointer.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         pointer.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8).isActive = true
         pointer.widthAnchor.constraint(equalTo: pointer.heightAnchor).isActive = true
     }
+    
     /// Gesture recognizer setup
     fileprivate func setupGestures() {
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         pointer.addGestureRecognizer(gestureRecognizer)
         pointer.isUserInteractionEnabled = true
     }
+    
     /// Handles gesture to move the pointer guided by the bar
-    ///     - Parameters:
-    ///         - sender: Pan gesture recognizer used to track location
-    /// Discussion: Couldn't use center method because the recalculation after CGAffineTransform does not appear to happen automatically in UIKit. So used origin to control the pointer position instead.
-    @objc private func handlePan(_ sender: UISwipeGestureRecognizer) {
-        /// Bounds
-        let minX = bar.frame.origin.x
-        let maxX = bar.frame.origin.x + bar.frame.maxX
-        /// Half slider width
-        let halfW = pointer.frame.width/2
-        /// Pointer move condition
-        if (minX...maxX).contains(sender.location(in: self).x) {
-            pointer.frame.origin = CGPoint(x: sender.location(in: self).x-halfW,
-                                           y: pointer.frame.origin.y)
-        }
-        /// Finger left the screen
-        if sender.state == UIGestureRecognizer.State.ended {
-            /// Trigger condition: Delays and return smoothly
-            if pointer.frame.origin.x+halfW >= maxX*0.98 {
+    @objc private func handlePan(_ sender: UIPanGestureRecognizer) {
+        let barWidth = bar.frame.width
+        let location = sender.location(in: bar)
+        
+        // Clamp the value between 0 (start of bar) and barWidth (end of bar)
+        let clampedX = max(0, min(location.x, barWidth))
+        
+        // Update the constraint instead of the frame
+        pointerLeftConstraint?.constant = clampedX
+        
+        if sender.state == .ended {
+            let progress = clampedX / barWidth
+            
+            if progress >= 0.98 {
                 delegate?.endCourse()
-                animateBack(duration: 0.5, delay: 1, to: CGPoint(x: minX, y: pointer.center.y))
+                // Return to start with a delay if completed
+                animateBack(duration: 0.5, delay: 1.0)
             } else {
-                /// Instantly returns to start position if the gesture ended and not trigged 
-                animateBack(duration: 0.1, delay: 0, to: CGPoint(x: minX, y: pointer.center.y))
+                // Return immediately if released early
+                animateBack(duration: 0.2, delay: 0.0)
             }
         }
     }
+    
     /// Animates slider translation back to start position
-    func animateBack(duration: CGFloat, delay: CGFloat, to point: CGPoint) {
+    func animateBack(duration: CGFloat, delay: CGFloat) {
         pointer.isUserInteractionEnabled = false
-        pointer.translation(duration: duration, delay: delay,
-                            centerTo: point) { result in
+        
+        // Set the target position back to the start
+        pointerLeftConstraint?.constant = 0
+        
+        // Standard UIKit animation for constraints
+        UIView.animate(withDuration: TimeInterval(duration),
+                       delay: TimeInterval(delay),
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.5,
+                       options: .curveEaseInOut,
+                       animations: {
+            self.layoutIfNeeded() // Forces the view to animate to the new constraint value
+        }) { _ in
             self.pointer.isUserInteractionEnabled = true
         }
     }
+    
     /// Setups UI
     func setupUI() {
         /// Hierarchy 1 - bar.
@@ -95,6 +118,7 @@ class SliderView: UIView {
         self.addSubview(pointer)
         pointerConstraints()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
